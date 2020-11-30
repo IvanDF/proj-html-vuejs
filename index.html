@@ -9,6 +9,8 @@
     <!-- FONT -->
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- FONTAWESOME -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.css'/>
     <!-- UTILITIES -->
     <link rel="stylesheet" href="./css/utilities.css">
     <!-- MAIN STYLE -->
@@ -22,6 +24,37 @@
 <body>
 
     <div id="iAccademy">
+        <!-- MAIN HEADER -->
+        <header class="main-header">
+            <!-- CONTAINER -->
+            <div class="container">
+                <!-- NAVBAR -->
+                <nav class="navbar">
+                    <!-- NAVBAR LOGO -->
+                    <div class="nav-img">
+                        <img class="img-resp" src="./img/header/logo-light.png" alt="iAccademy">
+                    </div>
+                    <!-- NAVBAR MENU -->
+                    <div class="nav-menu">
+                        <ul class="nav-list txt-upper h-list">
+                            <li v-for=" ( el , i ) in navbarList " class="nav-item">
+                                <a href="#">
+                                    {{ el.item }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="nav-cta h-list">
+                        <li v-for=" ( el, i ) in ctaList " class="cta-item">
+                            <a href="#">
+                                <i :class="`fas ${el.icon}`"></i>
+                                <span v-if=" el.bagde ? 'bagde' : '' " class="badge" > 0 </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
 
     </div>
     
