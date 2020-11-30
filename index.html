@@ -74,15 +74,25 @@
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed odio ipsam ea libero iste in esse quo eos numquam ipsa ullam repellendus, alias praesentium quis atque ex ducimus deserunt illum!</p>
                     <a class="btn btn-blue" href="#"> register now </a>
                 </div>
-
+                <!-- SLIDER DOT NAVIGATION -->
                 <div class="dot-nav">
                     <span class="circle"></span>
                     <span class="circle"></span>
                     <span class="circle active"></span>
                 </div>
 
-
             </section>
+
+            <div class="container mt-50">                
+                <section class="sm-cards">
+                    <div v-for=" ( el, i ) in smCards " class="card-blue txt-center">
+                        <img :src="`./img/main/sm-cards/h5-custom-icon-${el.image}.png`" alt="World">
+                        <h5 class="mt-25"> {{el.title}} </h5>
+                        <!-- H5 LEGGERMENTE A DESTRA ? -->
+                    </div>
+                </section>
+            </div>
+
 
         </main>
 

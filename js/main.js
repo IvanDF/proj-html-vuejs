@@ -8,6 +8,8 @@
 
      data: {
 
+        // HEADER / NABAR
+
         // POPULATING NAVBAR LIST
         navbarList: [
             {
@@ -41,6 +43,34 @@
             },
             {
                 icon: 'fa-bars',
+            },
+        ],
+
+        // MAIN SMALL CARDS
+        smCards: [
+            {
+                image: '1',
+                title: 'Languages'
+            },
+            {
+                image: '2',
+                title: 'Software'
+            },
+            {
+                image: '3',
+                title: 'Business'
+            },
+            {
+                image: '4',
+                title: 'Chemistry'
+            },
+            {
+                image: '5',
+                title: 'Science'
+            },
+            {
+                image: '6',
+                title: 'DIT&Craft'
             },
         ],
 

@@ -67,6 +67,8 @@
     object-position: bottom center;
 }
 
+/* SLIDER TEXT */
+
 .hero-slider .slider-txt {
     position: absolute;
     top: 50%;
@@ -78,6 +80,8 @@
     margin: 25px 0 60px;
     line-height: 1.8;
 }
+
+/* SLIDER DOT NAVIGATION */
 
 .hero-slider .dot-nav {
     position: absolute;
