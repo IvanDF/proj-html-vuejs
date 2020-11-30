@@ -35,7 +35,6 @@
     width: calc( ( 100% / 6 ) - 20px );
     margin: 10px;
     border: 1px solid #efefef;    
-    background: #f2f8fc;
 }
 
 .sm-cards .card-blue:hover {
@@ -116,12 +115,19 @@
 }
 
 /* COURSE */
+/* COURSE INFO */
+
+.course-info-section,
+.popular-courses-section,
+.plans-section {
+    border-bottom: 2px solid #eaebeb;
+}
 
 .course-info {
     display: flex;
 }
 
-.course .info-item {
+.course-info .info-item {
     padding: 30px 25px;
     width: 280px;
     border: 1px solid #eaebeb;
@@ -130,18 +136,18 @@
                 background 350ms;
 }
 
-.course .info-item span {
+.course-info .info-item span {
     color: #847b7b;
 }
 
-.course .info-item:hover,
-.course .info-item.active {
+.course-info .info-item:hover,
+.course-info .info-item.active {
     border-left: 10px solid #40c4ff;
     background: #fcfcfc;
 }
 
-.course .info-item:hover span,
-.course .info-item.active span {
+.course-info .info-item:hover span,
+.course-info .info-item.active span {
     color: #40c4ff;
 }
 
@@ -149,10 +155,6 @@
     position: relative;
     width: 100%;
     padding: 20px 50px;
-}
-
-.course-info .info-content p {
-    line-height: 1.8;
 }
 
 .course-info .info-content li {
@@ -170,6 +172,68 @@
     right: 0;
     bottom: 0;
     height: 120px;
+}
+
+/*  POPULAR COURSES */
+
+.popular-courses {
+    background: url('../img/main/courses/popular-courses/page-background-img.png');
+    padding-bottom: 100px;
+}
+
+.popular-courses .txt-pop-course {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.popular-courses .md-cards .card {
+    width: calc( ( 100% / 3 ) - 20px );
+    margin: 10px;
+    border: 1px solid #eaebeb;
+}
+
+.popular-courses .md-cards .card-txt {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.popular-courses .md-cards .card-txt strong {
+    margin-bottom: 5px;
+}
+
+.popular-courses .md-cards .card-txt small {
+    font-weight: 700;
+    color: #cecece;
+    margin-bottom: 20px;
+}
+
+.popular-courses .md-cards .tags {
+    display: flex;
+    align-items: center;
+    color: #cecece;
+    margin-top: 20px;
+}
+
+.popular-courses .md-cards .tags i {
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.popular-courses .md-cards .tags span {
+    margin-right: 10px;
+}
+
+.popular-courses .md-cards .card-txt .price {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+    padding: 5px 15px;
+    background: #ffd740;
+    border-radius: 20px;
+    font-size: 12px;
 }
 
 /* TABLET UP TO 1024px */

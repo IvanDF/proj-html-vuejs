@@ -54,10 +54,11 @@ a {
 }
 
 p {
-    font-size: 16px;
     color: #959595;
+    font-size: 16px;
+    line-height: 1.8;
 }
-
+    
 h1,
 h2,
 h3,
@@ -232,11 +233,9 @@ h6 {
 
 .sm-cards .card-blue {
     padding: 40px 30px;
+    background: #f2f8fc;
+    cursor: pointer;
 }
-
-/* .md-card {
-} */
-
 
 /* MEDIA QUERYS UTILITIES */
 
