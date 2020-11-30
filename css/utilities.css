@@ -18,8 +18,8 @@ body {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .container {
@@ -51,11 +51,11 @@ body {
 
 a {
     text-decoration: none;
-    color: #fff;
 }
 
 p {
     font-size: 16px;
+    color: #959595;
 }
 
 h1,
@@ -121,10 +121,18 @@ h6 {
     text-transform: capitalize;
 }
 
+.bold {
+    font-weight: 700;
+}
+
 /* COLORS */
 
 .col-w {
     color: #fff;
+}
+
+.col-blue {
+    color: #40c4ff;
 }
 
 /* MARGINS */
@@ -142,7 +150,15 @@ h6 {
 }
 
 .mb-50 {
-    margin-bottom: 25px;
+    margin-bottom: 50px;
+}
+
+.mt-100 {
+    margin-top: 100px;
+}
+
+.mb-100 {
+    margin-bottom: 100px;
 }
 
 /* BUTTONS */
@@ -176,6 +192,20 @@ h6 {
     width: 60px;
     height: 60px;
     border: none;
+}
+
+/* LAYOUT */
+
+.w-50.w-desktop {
+    width: calc(100% / 2);
+}
+
+.w-50 {
+    width: calc(100% / 2);
+}
+
+.h-div {
+    display: flex;
 }
 
 /* OTHERS */
@@ -231,6 +261,12 @@ h6 {
     
     .mobile-only {
         display: inline-flex;
+    }
+
+    /* LAYOUT */
+
+    .w-50.w-desktop {
+        width: 100%;
     }
 
 }

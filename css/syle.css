@@ -42,6 +42,79 @@
     background: #f7fdff;
 }
 
+/* INFO SECTION */
+/* INFO TUTORING */
+
+.info-section .info-tutoring img {
+    border-bottom: 2px solid #eaebeb;
+}
+
+/* USER POTENTIAL */
+
+.info-users {
+    display: flex;
+}
+
+.users-txt {
+    padding: 50px;
+}
+
+.users-txt span {
+    margin-right: 150px;
+    font-family: 'Merriweather', serif;
+}
+
+.users-txt span:last-child {
+    margin-right: 0;
+}
+
+.users-txt span h4 {
+    font-size: 48px;
+}
+
+.users-txt span small {
+    font-size: 16px;
+}
+
+/* STUDENTS SLIDER */
+
+.students-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../img/main/students-slider/h5-parallax-img-1.png');
+}
+
+.students-slider .slider-txt {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.students-slider h5 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.students-slider .dot-nav {
+    bottom: 80px;
+}
+
+.students-slider .dot-nav .circle {
+    margin: 0 5px;
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .5);
+}
+
+.students-slider .dot-nav .circle.active {
+    background: #fff;
+}
+
 /* TABLET UP TO 1024px */
 
 @media screen and ( max-width: 1024px ) {
@@ -52,6 +125,12 @@
     .sm-cards .card-blue {
         width: calc( ( 100% / 3 ) - 20px );
         margin: 10px;
+    }
+
+    /* USER POTENTIAL */
+
+    .info-users {
+        display: block;
     }
 
 }
