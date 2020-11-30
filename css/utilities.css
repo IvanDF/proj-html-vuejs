@@ -1,0 +1,150 @@
+/* RESET */ 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GENERAL SETTINGS */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* IMAGES */
+
+.img-resp {
+    display: inline-flex;
+    max-width: 100%;
+    height: auto;
+}
+
+/* POSITION */
+
+.pos-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* TYPOGRAPHY */
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+p {
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Merriweather', serif;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 32px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+h5 {
+    font-size: 16px;
+}
+
+h6 {
+    font-size: 12px;
+}
+
+/* LISTS */
+
+.list-inline li {
+    display: inline-flex;
+}
+
+.v-list li {
+    list-style: none;
+}
+
+.txt-sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.txt-serif {
+    font-family: 'Merriweather', serif;
+}
+
+/* TEXT SETTINGS */
+
+.txt-center{
+    text-align: center;
+}
+ 
+.txt-upper {
+    text-transform: uppercase;
+}
+ 
+.txt-capitalize {
+    text-transform: capitalize;
+}
+
+/* BUTTONS */
+
+.btn {
+    padding: 20px 30px;
+    background: none;
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-blue {
+    color: #fff;
+    background: #40c4ff;
+
+}
+
+.btn-outline {
+    color: #808080;
+    background: #fff;
+    border: 2px solid #eaebeb;
+
+}
+
+.btn-square {
+    padding: 0;
+    width: 60px;
+    height: 60px;
+    border: none;
+}
+
+/* CARDS */ 
+/* 
+[class*='card'] {
+    display: flex;
+}
+
+.sm-card {
+    display: flex;
+}
+
+.md-card {
+    display: flex;
+} */
