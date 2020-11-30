@@ -142,7 +142,40 @@
                     <span class="circle active"></span>
                     <span class="circle"></span>
                 </div>
+            </section>
 
+            <!-- COURSE -->
+            <section class="course mt-100">
+                <div class="container">
+                    <div class="course-info">
+
+                        <ul class="info-list v-list">
+                            <li v-for="( el, i ) in infoList"
+                                @click="getIndexCourse(i)"
+                                :class="['info-item bold txt-serif', courseIndex === i ? 'active' : '']" 
+                                >
+                                <span href="#"
+                                >
+                                    {{el.name}}
+                                </span>
+                            </li>
+                        </ul>
+                        <div v-for="(el, i) in infoList" class="info-content" v-if="courseIndex === i">
+                            <h3 class="mb-25">{{el.title}}</h3>
+                            <p class="mb-50">{{ el.text }}</p>
+                            <ul class="v-list">
+                                <li v-for="item in el.list">
+                                    <i class="fas fa-check col-blue"></i>
+                                    {{ item }}
+                                </li>
+                            </ul>
+                            <img src="./img/main/courses/course-info/h12-tabs-icon-1.png" alt="lorem ipsum dates dates">
+                        </div>
+
+                    </div>
+                    <div class="popular-courses"></div>
+                    <div class="plans"></div>
+                </div>
             </section>
 
 

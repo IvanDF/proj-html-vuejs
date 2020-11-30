@@ -115,6 +115,63 @@
     background: #fff;
 }
 
+/* COURSE */
+
+.course-info {
+    display: flex;
+}
+
+.course .info-item {
+    padding: 30px 25px;
+    width: 280px;
+    border: 1px solid #eaebeb;
+    cursor: pointer;
+    transition: border 350ms,
+                background 350ms;
+}
+
+.course .info-item span {
+    color: #847b7b;
+}
+
+.course .info-item:hover,
+.course .info-item.active {
+    border-left: 10px solid #40c4ff;
+    background: #fcfcfc;
+}
+
+.course .info-item:hover span,
+.course .info-item.active span {
+    color: #40c4ff;
+}
+
+.course-info .info-content {
+    position: relative;
+    width: 100%;
+    padding: 20px 50px;
+}
+
+.course-info .info-content p {
+    line-height: 1.8;
+}
+
+.course-info .info-content li {
+    padding: 20px 0;
+    font-size: 20px;
+    color: #959595;
+}
+
+.course-info .info-content i {
+    padding-right: 5px;
+}
+
+.course-info .info-content img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 120px;
+}
+
 /* TABLET UP TO 1024px */
 
 @media screen and ( max-width: 1024px ) {

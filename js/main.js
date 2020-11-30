@@ -4,9 +4,9 @@
 
  const iAccademy = new Vue ({
 
-     el: '#iAccademy',
+    el: '#iAccademy',
 
-     data: {
+    data: {
 
         // HEADER / NABAR
 
@@ -74,8 +74,88 @@
             },
         ],
 
-     },
+        courseIndex: 0,
+        infoList: [
+            {
+                name: 'What We Do',
+                title: 'Learn Possibilities',
+                text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta!',
+                list: [ 
+                    'We enrich throught learning.',
+                    'Maximizing potential through individual attention.',
+                    'The trusted name for specialized training.',
+                    'People teach. People learn. This in whewe they connect.'
+                ],
+                image: '',
+            },
+            {
+                name: 'Degree Programme',
+                title: 'Learn Ciaone',
+                text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta!',
+                list: [ 
+                    'We enrich throught learning.',
+                    'Maximizing potential through individual attention.',
+                    'The trusted name for specialized training.',
+                    'People teach. People learn. This in whewe they connect.'
+                ],
+                image: '',
+            },
+            {
+                name: 'Career Achievements',
+                title: 'Learn Prova',
+                text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta!',
+                list: [ 
+                    'We enrich throught learning.',
+                    'Oke potential through individual attention.',
+                    'The trusted name for specialized training.',
+                    'People teach. People learn. This in whewe they connect.'
+                ],
+                image: '',
+            },
+            {
+                name: 'Personal Managment',
+                title: 'Learn Possibilities',
+                text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta!',
+                list: [ 
+                    'We enrich throught learning.',
+                    'Maximizing potential through individual attention.',
+                    'The trusted name for specialized training.',
+                    'People teach. People learn. This in whewe they connect.'
+                ],
+                image: '',
+            },
+            {
+                name: 'Steps To Success',
+                title: 'Learn Possibilities',
+                text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta!',
+                list: [ 
+                    'We enrich throught learning.',
+                    'People teach. People learn. This in whewe they connect.'
+                ],
+                image: '',
+            },
+            {
+                name: 'Knowledge Transfer',
+                title: 'Learn Possibilities',
+                text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta!',
+                list: [ 
+                    'We enrich throught learning.',
+                    'Maximizing potential through individual attention.',
+                    'The trusted name for specialized training.',
+                    'People teach. People learn. This in whewe they connect.'
+                ],
+                image: '',
+            },
+        ],
+
+    },
      
-     methods: {},
+    methods: {
+        getIndexCourse(index) {
+
+            this.courseIndex = index;
+
+        },
+    },
 
  }); // <-- END VUE
