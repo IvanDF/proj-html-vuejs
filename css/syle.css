@@ -177,8 +177,13 @@
 /*  POPULAR COURSES */
 
 .popular-courses {
+    position: relative;
     background: url('../img/main/courses/popular-courses/page-background-img.png');
-    padding-bottom: 100px;
+    background-size: cover;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+    border-bottom: 2px solid #eaebeb;
 }
 
 .popular-courses .txt-pop-course {
@@ -231,9 +236,155 @@
     right: 0;
     margin: 20px;
     padding: 5px 15px;
-    background: #ffd740;
+    background: #40c4ff;
     border-radius: 20px;
     font-size: 12px;
+}
+
+.popular-courses .md-cards .card-txt .price.free {
+    background: #ffd740;
+}
+
+.popular-courses .dot-nav {
+    display:flex;
+    justify-content: center;
+    position: relative;
+}
+
+.popular-courses .dot-nav .circle {
+    display: inline-block;
+    height:15px;
+    width:15px;
+    margin: 0 8px;
+    border-radius: 50%;
+    background: #9ce0ff;
+}
+
+.popular-courses .dot-nav .circle.active {
+    background: #40c4ff;
+}
+
+.popular-content .h-line {
+    position: absolute;
+    bottom: 58%;
+    left: 0;
+    width: 100%;
+    border: 1px solid #eaebeb;
+}
+
+/* PLANS */
+
+.plans {
+    padding: 100px 0;
+}
+
+.plan-text {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.plans .plan-table {
+    position: relative;
+    display: flex;
+}
+
+.plans ul {
+    width: 25%;
+    border-top: 4px solid #d6f2ff;
+}
+
+.plans ul li {
+    padding: 20px;
+    color: #808080;
+    border: 1px solid #eaebeb;
+    border-collapse: collapse;
+    font-weight: 700;
+}
+
+.plans ul li h5 {
+    color: #000;
+    margin-top: 150px;
+    font-size: 28px;
+}
+
+.plans table {
+    margin: 0;
+    border-collapse: collapse;
+    width: 75%;
+}
+
+.plans th,
+.plans td {
+    margin: 0;
+    border: 1px solid #eaebeb;
+    width: calc(100% / 3);
+    padding: 20px;
+    text-align: center;
+}
+
+.plans th {
+    border-top: 4px solid #d6f2ff;
+}
+
+.plans td.col-lg {
+    color: #898989;
+}
+
+.plans th img {
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.plans h5 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.plans h5 small {
+    font-size: 18px;
+    color: #545454;
+}
+
+.plans th.active {
+    border-top: 4px solid #40c4ff;
+}
+
+.plans th.plan {
+    background: #f7fdff;
+}
+
+.plans .btn-cell {
+    height: 100px;
+    background: #f7fdff;
+}
+
+.plans .btn-cell .btn {
+    padding: 15px 25px;
+}
+
+.plans .btn-shop {
+    position: absolute;
+    right: 0;
+    transform: translateX( 95% );
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 125px;
+    width: 80px;
+}
+
+.plans .btn-shop .btn-square {
+    margin-bottom: 5px;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 10px -5px rgba(0, 0, 0, .2);
+    background: #fff;
+    padding: 10px;
+}
+
+.plans .btn-shop .btn-square:first-child {
+    background:#ee2852;
+    padding: 7px;
 }
 
 /* TABLET UP TO 1024px */

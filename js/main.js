@@ -74,6 +74,7 @@
             },
         ],
 
+        // COURSE INFO SECTION
         courseIndex: 0,
         infoList: [
             {
@@ -148,14 +149,126 @@
             },
         ],
 
+        // POPULAR COURSE SLIDER
+
+        courseSlider: [
+            {
+                image: './img/main/courses/popular-courses/course-5-f-img',
+                title: 'Android Developer',
+                author: 'David Sanders',
+                price: 'free',
+                text: 'Lo Iusto id ducimus emporibus, quidem natus. Soluta id, provident hic vero ut numquam assumenda fuga autem exercitationem quae!',
+                tags: [
+                    {
+                        icon: 'fa-user',
+                        text: '1',
+                    },
+                    {
+                        icon: 'fa-tag',
+                        text: 'PROGRAMMING',
+                    }
+                ],
+            },
+            {
+                image: './img/main/courses/popular-courses/course-6-f-img',
+                title: 'Web Designer',
+                author: 'Jennefer Powell',
+                price: 'free',
+                text: 'Lo Iusto id ducimus emporibus, quidem natus. Soluta id, provident hic vero ut numquam assumenda fuga autem exercitationem quae!',
+                tags: [
+                    {
+                        icon: 'fa-user',
+                        text: '1',
+                    },
+                    {
+                        icon: 'fa-tag',
+                        text: 'PROGRAMMING',
+                    }
+                ],
+            },
+            {
+                image: './img/main/courses/popular-courses/course-12-f-img',
+                title: 'Financial Modeling',
+                author: 'Edward Bowman',
+                price: '$20',
+                text: 'Lo Iusto id ducimus emporibus, quidem natus. Soluta id, provident hic vero ut numquam assumenda fuga autem exercitationem quae!',
+                tags: [
+                    {
+                        icon: 'fa-user',
+                        text: '1',
+                    },
+                    {
+                        icon: 'fa-tag',
+                        text: 'BUSINESS',
+                    }
+                ],
+            },
+        ],
+
+        // ADV LIST
+        indexAdv: '',
+        advList: [
+            {
+                img: 'h5-client-5',
+                imgH: 'h5-client-5-h'
+            },
+            {
+                img: 'h5-client-1',
+                imgH: 'h5-client-1-h'
+            },
+            {
+                img: 'h5-client-2',
+                imgH: 'h5-client-2-h'
+            },
+            {
+                img: 'h5-client-1',
+                imgH: 'h5-client-1-h'
+            },
+        ],
+
+        // FOOTER LIST
+        footerCourses: [
+            {
+                title: 'Businness English',
+                sub: 'Preston Marshall',
+            },
+            {
+                title: 'Social Computing',
+                sub: 'David Sanders',
+            },
+            {
+                title: 'Learn Spanish',
+                sub: 'Jennie King',
+            },
+        ],
+
+        footerSupport: [
+            'User dashboard',
+            'Contact Us',
+            'FAQ',
+            'Course Offer',
+            'Events'
+        ],
+
     },
-     
+
     methods: {
         getIndexCourse(index) {
 
             this.courseIndex = index;
 
         },
+        changeH(i) {
+
+            this.indexAdv = i
+
+            if (this.imgHover === false) {
+                this.imgHover = true
+            } else {
+                this.imgHover = false
+            }
+
+        }
     },
 
  }); // <-- END VUE

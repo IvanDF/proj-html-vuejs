@@ -136,6 +136,10 @@ h6 {
     color: #40c4ff;
 }
 
+.col-dark-g {
+    color: #959595;
+}
+
 /* MARGINS */
 
 .mt-25 {
@@ -175,6 +179,16 @@ h6 {
     outline: none;
 }
 
+.btn-square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 65px;
+    height: 65px;
+    border: none;
+}
+
 .btn-blue {
     color: #fff;
     background: #40c4ff;
@@ -185,14 +199,12 @@ h6 {
     color: #808080;
     background: #fff;
     border: 2px solid #eaebeb;
-
 }
 
-.btn-square {
-    padding: 0;
-    width: 60px;
-    height: 60px;
-    border: none;
+.btn-fx-bottom {
+    position: fixed;
+    right: 0;
+    bottom: 0;
 }
 
 /* LAYOUT */

@@ -178,69 +178,275 @@
             </section>
 
             <!-- POPULAR COURSES -->
-            <section class="popular-courses mt-100">
-                <div class="container">
+            <section class="popular-courses">
+                <div class="container popular-content">
                     <div class="txt-pop-course txt-center">
                         <h2 class="mb-25">Popular Online Courses</h2>
                         <p class="mb-100">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias nobis nulla dolores! Eveniet quaerat amet harum minus, dolore exercitationem numquam debitis qui laborum nostrum praesentium, laboriosam porro suscipit iure accusamus?</p>
                     </div>
-                    <div class="md-cards">
-                        <div class="card">
-                            <div class="card-img">
-                                <img class="img-resp" src="./img/main/courses/popular-courses/course-5-f-img.jpg" alt="lore infoList">
-                            </div>
-                            <div class="card-txt">
-                                <strong class="txt-serif">Android Developer</strong>
-                                <small>David Sanders</small>
-                                <span class="price col-w">FREE</span>
-                                <p>Lo Iusto id ducimus emporibus, quidem natus. Soluta id, provident hic vero ut numquam assumenda fuga autem exercitationem quae!</p>
-                                <div class="tags mt-25">
-                                    <i class="fas fa-user"></i> <span>1</span>
-                                    <i class="fas fa-tag"></i> <span class="bold">PROGRAMMING</span>
+                    <div class="course-slider">
+                        <div class="md-cards">
+                            <div v-for="(el, index) in courseSlider" class="card">
+                                <div class="card-img">
+                                    <img class="img-resp" :src="`${el.image}.jpg`" :alt="el.title">
+                                </div>
+                                <div class="card-txt">
+                                    <strong class="txt-serif">{{ el.title }}</strong>
+                                    <small>{{el.author}}</small>
+                                    <span :class="['price col-w txt-upper', el.price === 'free' ? 'free' : '']"> {{ el.price }}</span>
+                                    <p>{{el.text}}</p>
+                                    <div class="tags mt-25">
+                                        <span v-for="(e,i) in el.tags">
+                                            <i :class="`fas ${e.icon}`"></i> <span> {{ e.text }} </span>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-img">
-                                <img class="img-resp" src="./img/main/courses/popular-courses/course-5-f-img.jpg" alt="lore infoList">
-                            </div>
-                            <div class="card-txt">
-                                <strong class="txt-serif">Android Developer</strong>
-                                <small>David Sanders</small>
-                                <span class="price col-w">FREE</span>
-                                <p>Lo Iusto id ducimus emporibus, quidem natus. Soluta id, provident hic vero ut numquam assumenda fuga autem exercitationem quae!</p>
-                                <div class="tags mt-25">
-                                    <i class="fas fa-user"></i> <span>1</span>
-                                    <i class="fas fa-tag"></i> <span class="bold">PROGRAMMING</span>
-                                </div>
-                            </div>
+                        <div class="dot-nav mt-50">
+                            <span class="circle"></span>
+                            <span class="circle active"></span>
+                            <span class="circle"></span>
                         </div>
-                        <div class="card">
-                            <div class="card-img">
-                                <img class="img-resp" src="./img/main/courses/popular-courses/course-5-f-img.jpg" alt="lore infoList">
-                            </div>
-                            <div class="card-txt">
-                                <strong class="txt-serif">Android Developer</strong>
-                                <small>David Sanders</small>
-                                <span class="price col-w">FREE</span>
-                                <p>Lo Iusto id ducimus emporibus, quidem natus. Soluta id, provident hic vero ut numquam assumenda fuga autem exercitationem quae!</p>
-                                <div class="tags mt-25">
-                                    <i class="fas fa-user"></i> <span>1</span>
-                                    <i class="fas fa-tag"></i> <span class="bold">PROGRAMMING</span>
+                    </div>
+                    <hr class="h-line">
+                    <!-- SERVE? -->
+                </div>
+                
+                <!-- PLANS -->
+                <div class="plans">
+                    <div class="container">
+                        <div class="plan-text txt-center">
+                            <h2>Pricing Plans</h2>
+                            <p class="mt-25">Lorem, i maiores qui unde nostrum voluptate rem similique minus aliquam, amet autem, laboriosam ipsum libero?</p>
+                        </div>
+                        <div class="plan-table mt-100">
+                            <ul class="v-list">
+                                <li>
+                                    <h5>Save up to 40% by paying weekly</h5>
+                                </li>
+                                <li>
+                                    Number of Courses
+                                </li>
+                                <li>
+                                    Time
+                                </li>
+                                <li>
+                                    Web designing
+                                </li>
+                                <li>
+                                    Human-Centered Design
+                                </li>
+                                <li>
+                                    Basic Marketing
+                                </li>
+                                <li>
+                                    Python for Everybody
+                                </li>
+                                <li>
+                                    Android Developer
+                                </li>
+                                <li>
+                                    Business English
+                                </li>
+                            </ul>
+                            <table>
+                                <tr>
+                                    <th class="plan">
+                                        <img src="./img/main/plans/h5-custom-icon-7.png" alt="Standard plan">
+                                        <h5>Standard</h5>
+                                        <h5 class="price">
+                                            <small class="txt-sans">
+                                                $12
+                                            </small>    
+                                        </h5>
+                                    </th>
+                                    <th class="plan active">
+                                        <img src="./img/main/plans/h5-custom-icon-8.png" alt="Professional plan">
+                                        <h5>Professional</h5>
+                                        <h5 class="price">
+                                            <small class="txt-sans">
+                                                $59
+                                            </small>    
+                                        </h5>
+                                    </th>
+                                    <th class="plan">
+                                        <img src="./img/main/plans/h5-custom-icon-9.png" alt="Advanced plan">
+                                        <h5>Advanced</h5>
+                                        <h5 class="price">
+                                            <small class="txt-sans">
+                                                $88
+                                            </small>    
+                                        </h5>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>4</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-blue"><i class="fas fa-check"></i></td>
+                                    <td class="col-blue"><i class="fas fa-check"></i></td>
+                                    <td class="col-blue"><i class="fas fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-blue"><i class="fas fa-check"></i></td>
+                                    <td class="col-blue"><i class="fas fa-check"></i></td>
+                                    <td class="col-blue"><i class="fas fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg"> <i class="fas fa-times"></i> </td>
+                                    <td class="col-blue"><i class="fas fa-check"></i></td>
+                                    <td class="col-blue"><i class="fas fa-check"></i></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td class="col-lg"> <i class="fas fa-times"></i> </td>
+                                    <td class="col-blue"><i class="fas fa-check"></i></td>
+                                    <td class="col-blue"><i class="fas fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg"> <i class="fas fa-times"></i> </td>
+                                    <td class="col-blue"><i class="fas fa-check"></i></td>
+                                    <td class="col-blue"><i class="fas fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg"> <i class="fas fa-times"></i> </td>
+                                    <td class="col-blue"><i class="fas fa-check"></i></td>
+                                    <td class="col-blue"><i class="fas fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-lg"> <i class="fas fa-times"></i> </td>
+                                    <td class="col-lg"> <i class="fas fa-times"></i> </td>
+                                    <td class="col-blue"><i class="fas fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="btn-cell">
+                                        <a href="#" class="btn btn-outline">GET IT NOW</a>
+                                    </td>
+                                    <td class="btn-cell">
+                                        <a href="#" class="btn btn-blue">GET IT NOW</a>
+                                    </td>
+                                    <td class="btn-cell">
+                                        <a href="#" class="btn btn-outline">GET IT NOW</a>
+                                    </td>
+                                </tr>
+                                <div class="btn-shop">
+                                    <a href="#" class="btn btn-square">
+                                        <img class="img-resp" src="./img/main/plans/svg-0.svg" alt="Lorem ipsum">
+                                    </a>
+                                    <a href="#" class="btn btn-square">
+                                        <img class="img-resp" src="./img/main/plans/svg-2.svg" alt="Lorem ipsum">
+                                    </a>
                                 </div>
-                            </div>
+                            </table>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- PLANS -->
-            <section class="plans">
+            <!-- ADVERTISING LIST -->
+            <section class="adv-logos mb-100 mt-100">
+
+                <ul class="h-list txt-center">
+                    <li v-for=" (img,i) in  advList">
+                        <a href="#"  @mouseover="changeH(i)" @mouseleave="changeH(i)">
+                            <img v-if=" indexAdv === i " :src="`./img/main/adv/${img.imgH}.png`" alt="lorem">
+                            <img v-else :src="`./img/main/adv/${img.img}.png`" alt="lorem">
+                        </a>
+                    </li>
+                </ul>
             </section>
-
-
         </main>
 
+        <!-- MAIN FOOTER -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-nav mb-50">
+                    <div class="info">
+                        <img class="img-resp" src="./img/header/logo-light.png" alt="Logo">
+                        <p class="mt-25">Providing Life Changing Experiences Throught Education. Class That Fit Your Busy Life. Closer to Home</p>
+                        <ul class="v-list mt-25">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-phone"></i>
+                                    <span>
+                                        1-677-124-44227    
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-clock"></i>
+                                    <span>
+                                        Mon - Sat 8.00 - 18.00    
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="courses">
+                        <h5>Popular Courses</h5>
+                        <ul class="courses-list v-list mt-25" >
+                            <li v-for=" item in footerCourses " class="course-item">
+                                <a class="col-dark-g" href="#">
+                                    <h6 class="txt-serif"> {{ item.title }} </h6>
+                                    <small> {{ item.sub }} </small>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="support"> 
+                        <h5>Support</h5>
+                        <ul class="support-list v-list mt-25">
+                            <li v-for=" item in footerSupport " class="support-item">
+                                <a class="col-dark-g" href="#">
+                                    {{ item }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="map-learning txt-center">
+                        <h5>Flexible Learning</h5>
+                        <img class="img-resp mt-25" src="./img/footer/footer-img-1.png" alt="Map learning">
+                    </div>
+                </div>
+                <div class="copy">
+                    <div class="copy-left">
+                        <p> Copyrights 2017 Mikado Themes </p>
+                    </div>
+                    <div class="copy-right">
+                        <ul class="h-list">
+                            <li>
+                                <a href="#">
+                                    CALL +44 300 303 0266
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">FOLLOW US</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <a href="#" class="btn btn-fx-bottom btn-square btn-blue txt-center"> ^ <br> TOP </a>
     </div>
     
     <!-- MAIN JS -->
