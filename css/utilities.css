@@ -30,47 +30,6 @@ body {
     width: 1020px;
 }
 
-/* NAVBAR */
-
-.main-header {
-    background: #666; /* debug */
-}
-
-/* NAVBAR */
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    line-height: 80px;
-    vertical-align: middle;
-}
-
-/* NAVBAR LOGO */
-
-.nav-img {
-    display: flex;
-    align-items: center;
-    flex-basis: 200px;
-}
-
-/* NAVBAR MENU */
-.nav-menu {
-    flex-grow: 1;
-    margin: 0 50px;
-}
-
-.nav-menu .nav-list {
-    display: flex;
-    justify-content: space-between;
-}
-
-/* NAVBAR CTA */
-
-.nav-cta .cta-item {
-    position: relative;
-    padding: 0 10px;
-}
-
 /* IMAGES */
 
 .img-resp {
@@ -106,7 +65,7 @@ h3 {
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 62px;
 }
 
 h2 {
@@ -159,6 +118,30 @@ h6 {
  
 .txt-capitalize {
     text-transform: capitalize;
+}
+
+/* COLORS */
+
+.col-w {
+    color: #fff;
+}
+
+/* MARGINS */
+
+.mt-25 {
+    margin-top: 25px 0;
+}
+
+.mb-25 {
+    margin-bottom: 25px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.mb-50 {
+    margin-bottom: 25px;
 }
 
 /* BUTTONS */
@@ -222,3 +205,31 @@ h6 {
 .md-card {
     display: flex;
 } */
+
+
+/* MEDIA QUERYS UTILITIES */
+
+.desktop-only {
+    display: block;
+}
+
+.mobile-only {
+    display: none;
+}
+
+
+/* TABLET UP TO 1024px */
+
+@media screen and ( max-width: 1024px ) {
+
+    /* MEDIA QUERYS UTILITIES */
+    
+    .desktop-only {
+        display: none;
+    }
+    
+    .mobile-only {
+        display: inline-flex;
+    }
+
+}

@@ -13,6 +13,8 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.css'/>
     <!-- UTILITIES -->
     <link rel="stylesheet" href="./css/utilities.css">
+    <!-- PAGE STRUCTURE -->
+    <link rel="stylesheet" href="./css/page-structure.css">
     <!-- MAIN STYLE -->
     <link rel="stylesheet" href="./css/syle.css">
     <!-- VUE DEV. SCRIPT -->
@@ -35,7 +37,7 @@
                         <img class="img-resp" src="./img/header/logo-light.png" alt="iAccademy">
                     </div>
                     <!-- NAVBAR MENU -->
-                    <div class="nav-menu">
+                    <div class="desktop-only nav-menu">
                         <ul class="nav-list txt-upper h-list">
                             <li v-for=" ( el , i ) in navbarList " class="nav-item">
                                 <a href="#">
@@ -55,6 +57,34 @@
                 </nav>
             </div>
         </header>
+
+        <!-- MAIN SECTION -->
+        <main class="main-section">
+
+            <!-- HERO SLIDER -->
+            <section class="hero-slider">
+                
+                <!-- SLIDER IMAGES -->
+                <div class="slider-img">
+                    <img src="./img/main/hero-slider/h5-slide-3-background.jpg" alt="">
+                </div>
+                <!-- SLIDER TXTS -->
+                <div class="slider-txt txt-center col-w">
+                    <h1>Contemporary Ideas</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed odio ipsam ea libero iste in esse quo eos numquam ipsa ullam repellendus, alias praesentium quis atque ex ducimus deserunt illum!</p>
+                    <a class="btn btn-blue" href="#"> register now </a>
+                </div>
+
+                <div class="dot-nav">
+                    <span class="circle"></span>
+                    <span class="circle"></span>
+                    <span class="circle active"></span>
+                </div>
+
+
+            </section>
+
+        </main>
 
     </div>
     
