@@ -18,8 +18,7 @@ body {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 30px;
 }
 
 .container {
@@ -33,7 +32,7 @@ body {
 /* IMAGES */
 
 .img-resp {
-    display: inline-flex;
+    display: flex;
     max-width: 100%;
     height: auto;
 }
@@ -49,14 +48,14 @@ body {
 
 /* TYPOGRAPHY */
 
-a {
+a { 
     text-decoration: none;
 }
 
 p {
-    color: #959595;
-    font-size: 16px;
-    line-height: 1.8;
+    font-size: 18px;
+    line-height: 1.5;
+    color:#595959;
 }
     
 h1,
@@ -67,15 +66,16 @@ h5 {
 }
 
 h1 {
-    font-size: 62px;
+    font-size: 64px;
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 46px;
 }
 
 h3 {
-    font-size: 32px;
+    font-size: 36px;
+    color: #303030;
 }
 
 h4 {
@@ -117,7 +117,7 @@ h6 {
 .txt-upper {
     text-transform: uppercase;
 }
- 
+
 .txt-capitalize {
     text-transform: capitalize;
 }
@@ -158,6 +158,14 @@ h6 {
     margin-bottom: 50px;
 }
 
+.mt-75 {
+    margin-top: 75px;
+}
+
+.mb-75 {
+    margin-bottom: 75px;
+}
+
 .mt-100 {
     margin-top: 100px;
 }
@@ -169,10 +177,11 @@ h6 {
 /* BUTTONS */
 
 .btn {
-    padding: 20px 30px;
+    padding: 15px 35px;
     background: none;
     border: 2px solid transparent;
     text-transform: uppercase;
+    font-size: 14px;
     font-weight: 700;
     letter-spacing: 1px;
     cursor: pointer;
@@ -225,7 +234,7 @@ h6 {
 
 .badge {
     position: absolute;
-    top: 25px;
+    top: 38px;
     right: 0;
     width: 15px;
     height: 15px;

@@ -2,28 +2,31 @@
 /* SLIDER DOT NAVIGATION */
 
 .hero-slider .dot-nav .circle {
-    margin: 0 5px;
+    margin: 0 3px;
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border: 2px transparent;
     border-radius: 50%;
-    background: rgba(255, 255, 255, .5);
+    background: #ffffff4d;
 }
 
+.hero-slider .dot-nav .circle:hover,
 .hero-slider .dot-nav .circle.active {
     position: relative;
-    border: 2px solid#fff;
+    transform: scale(1.25,1.25);
+    border: 1.5px solid#fff;
     background: transparent;
 }
 
+.hero-slider .dot-nav .circle:hover::after,
 .hero-slider .dot-nav .circle.active::after {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 7px;
-    height: 7px;
+    width: 5px;
+    height: 5px;
     background: #fff;
     border-radius: 50%;
     transform: translate( -50%, -50% );
@@ -44,7 +47,7 @@
 /* INFO SECTION */
 /* INFO TUTORING */
 
-.info-section .info-tutoring img {
+.info-section {
     border-bottom: 2px solid #eaebeb;
 }
 
@@ -52,15 +55,16 @@
 
 .info-users {
     display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .users-txt {
-    padding: 50px;
+    padding: 30px 90px 30px 30px;
 }
 
 .users-txt span {
-    margin-right: 150px;
-    font-family: 'Merriweather', serif;
+    margin-right: 100px;
 }
 
 .users-txt span:last-child {
@@ -69,6 +73,7 @@
 
 .users-txt span h4 {
     font-size: 48px;
+    line-height: 1.5;
 }
 
 .users-txt span small {
@@ -82,6 +87,7 @@
     justify-content: center;
     align-items: center;
     background: url('../img/main/students-slider/h5-parallax-img-1.png');
+    background-position: center top;
 }
 
 .students-slider .slider-txt {
@@ -89,7 +95,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center;    
+}
+
+.students-slider .slider-txt p {
+    margin: 30px 0 40px;
+    color: #ffffffcc;
 }
 
 .students-slider h5 {
@@ -98,7 +109,7 @@
 }
 
 .students-slider .dot-nav {
-    bottom: 80px;
+    bottom: 100px;
 }
 
 .students-slider .dot-nav .circle {
@@ -125,6 +136,15 @@
 
 .course-info {
     display: flex;
+}
+
+.course-info h3 {
+    font-size: 42px;
+}
+
+.course-info p,
+.course-info ul li {
+    color: #808080;
 }
 
 .course-info .info-item {
@@ -158,20 +178,25 @@
 }
 
 .course-info .info-content li {
-    padding: 20px 0;
-    font-size: 20px;
-    color: #959595;
+    display: flex;
+    align-items: flex-start;
+    margin: 25px 0;
+    font-size: 18px;
 }
 
 .course-info .info-content i {
+    position: relative;
+    top: 5px;
     padding-right: 5px;
 }
 
-.course-info .info-content img {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    height: 120px;
+.course-info .content {
+    display: flex;
+    align-items: flex-end;
+}
+
+.course-info .content-img {
+    width: 120px;
 }
 
 /*  POPULAR COURSES */
@@ -179,21 +204,27 @@
 .popular-courses {
     position: relative;
     background: url('../img/main/courses/popular-courses/page-background-img.png');
-    background-size: cover;
-    background-position: left bottom;
-    background-repeat: no-repeat;
+    background-position: left top;
+    background-repeat: repeat;
     padding: 100px 0;
     border-bottom: 2px solid #eaebeb;
 }
 
+.popular-courses .popular-content {
+    padding: 100px 0;
+}
+
 .popular-courses .txt-pop-course {
-    width: 900px;
-    margin: 0 auto;
+    margin: 0 80px 80px;
+}
+
+.popular-courses .txt-pop-course h2 {
+    margin-bottom: 20px;
 }
 
 .popular-courses .md-cards .card {
-    width: calc( ( 100% / 3 ) - 20px );
-    margin: 10px;
+    width: calc( ( 100% / 3 ) - 30px );
+    margin: 15px;
     border: 1px solid #eaebeb;
 }
 
@@ -201,7 +232,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 20px 15px;
+    background: #fff;
 }
 
 .popular-courses .md-cards .card-txt strong {
@@ -214,6 +246,12 @@
     margin-bottom: 20px;
 }
 
+.popular-courses .md-cards .card-txt p {
+    color: #898989;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
 .popular-courses .md-cards .tags {
     display: flex;
     align-items: center;
@@ -221,21 +259,26 @@
     margin-top: 20px;
 }
 
+
+.popular-courses .md-cards .card-txt .tags i,
+.popular-courses .md-cards .card-txt .tags span {
+    font-size: 12px;
+}
+
 .popular-courses .md-cards .tags i {
-    margin-right: 5px;
-    font-size: 14px;
+    margin: 0 5px 0 10px;
 }
 
 .popular-courses .md-cards .tags span {
-    margin-right: 10px;
+    font-weight: 700;
 }
 
 .popular-courses .md-cards .card-txt .price {
     position: absolute;
     top: 0;
     right: 0;
-    margin: 20px;
-    padding: 5px 15px;
+    margin: 20px 15px 0;
+    padding: 2px 12px;
     background: #40c4ff;
     border-radius: 20px;
     font-size: 12px;
@@ -253,8 +296,8 @@
 
 .popular-courses .dot-nav .circle {
     display: inline-block;
-    height:15px;
-    width:15px;
+    height: 10px;
+    width: 10px;
     margin: 0 8px;
     border-radius: 50%;
     background: #9ce0ff;
@@ -278,14 +321,17 @@
     padding: 100px 0;
 }
 
-.plan-text {
-    width: 900px;
-    margin: 0 auto;
+.plans h2 {
+    margin-bottom: 20px;
+}
+
+.plans .plan-container {
+    position: relative;
 }
 
 .plans .plan-table {
-    position: relative;
     display: flex;
+    background: #fff;
 }
 
 .plans ul {
@@ -297,37 +343,35 @@
     padding: 20px;
     color: #808080;
     border: 1px solid #eaebeb;
-    border-collapse: collapse;
     font-weight: 700;
 }
 
 .plans ul li h5 {
     color: #000;
-    margin-top: 150px;
-    font-size: 28px;
+    margin-top: 120px;
+    font-size: 24px;
+    line-height: 1.5;
 }
 
 .plans table {
     margin: 0;
     border-collapse: collapse;
     width: 75%;
+    color: #808080;
 }
 
 .plans th,
 .plans td {
-    margin: 0;
-    border: 1px solid #eaebeb;
     width: calc(100% / 3);
     padding: 20px;
+    margin: 0;
+    border: 1px solid #eaebeb;
+    font-size: 18px;
     text-align: center;
 }
 
 .plans th {
     border-top: 4px solid #d6f2ff;
-}
-
-.plans td.col-lg {
-    color: #898989;
 }
 
 .plans th img {
@@ -365,12 +409,9 @@
 .plans .btn-shop {
     position: absolute;
     right: 0;
-    transform: translateX( 95% );
-    top: 20px;
+    top: 220px;
     display: flex;
     flex-direction: column;
-    height: 125px;
-    width: 80px;
 }
 
 .plans .btn-shop .btn-square {
@@ -385,6 +426,19 @@
 .plans .btn-shop .btn-square:first-child {
     background:#ee2852;
     padding: 7px;
+}
+
+/* ADVERTISING LIST */
+
+.adv-logos ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.adv-logos li {
+    width: calc( 100% / 4 ) ;
 }
 
 /* TABLET UP TO 1024px */

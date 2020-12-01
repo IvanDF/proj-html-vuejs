@@ -80,7 +80,7 @@
             {
                 name: 'What We Do',
                 title: 'Learn Possibilities',
-                text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta!',
+                text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta!',
                 list: [ 
                     'We enrich throught learning.',
                     'Maximizing potential through individual attention.',
@@ -157,7 +157,7 @@
                 title: 'Android Developer',
                 author: 'David Sanders',
                 price: 'free',
-                text: 'Lo Iusto id ducimus emporibus, quidem natus. Soluta id, provident hic vero ut numquam assumenda fuga autem exercitationem quae!',
+                text: 'Quidem natus. Soluta id, provident, provident hic vero ut numquam assumenda fuga autem exercitationem quae!',
                 tags: [
                     {
                         icon: 'fa-user',
@@ -174,7 +174,7 @@
                 title: 'Web Designer',
                 author: 'Jennefer Powell',
                 price: 'free',
-                text: 'Lo Iusto id ducimus emporibus, quidem natus. Soluta id, provident hic vero ut numquam assumenda fuga autem exercitationem quae!',
+                text: 'Quidem natus. Soluta id, provident, provident hic vero ut numquam assumenda fuga autem exercitationem quae!',
                 tags: [
                     {
                         icon: 'fa-user',
@@ -191,7 +191,7 @@
                 title: 'Financial Modeling',
                 author: 'Edward Bowman',
                 price: '$20',
-                text: 'Lo Iusto id ducimus emporibus, quidem natus. Soluta id, provident hic vero ut numquam assumenda fuga autem exercitationem quae!',
+                text: 'Quidem natus. Soluta id, provident, provident hic vero ut numquam assumenda fuga autem exercitationem quae!',
                 tags: [
                     {
                         icon: 'fa-user',

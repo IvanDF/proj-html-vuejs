@@ -49,7 +49,7 @@
                     <ul class="nav-cta h-list">
                         <li v-for=" ( el, i ) in ctaList " class="cta-item">
                             <a href="#">
-                                <i :class="`col-w fas ${el.icon}`"></i>
+                                <i :class="`fas ${el.icon}`"></i>
                                 <span v-if=" el.bagde ? 'bagde' : '' " class="badge" > 0 </span>
                             </a>
                         </li>
@@ -71,7 +71,7 @@
                 <!-- SLIDER TXTS -->
                 <div class="slider-txt txt-center">
                     <h1 class="col-w">Contemporary Ideas</h1>
-                    <p class="col-w">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed odio ipsam ea libero iste in esse quo eos numquam ipsa ullam repellendus, alias praesentium quis atque ex ducimus deserunt illum!</p>
+                    <p>Lorem ipsum dolor, elit. Sed odio ipsam iste in esse quo eos numquam ipsa ullam repellendus, alias praesentium quis atque ex ducimus deserunt illum!</p>
                     <a class="btn btn-blue" href="#"> register now </a>
                 </div>
                 <!-- SLIDER DOT NAVIGATION -->
@@ -83,6 +83,7 @@
 
             </section>
 
+            <!-- SMALL CARDS -->
             <div class="container mt-50">                
                 <section class="sm-cards">
                     <div v-for=" ( el, i ) in smCards " class="card-blue txt-center">
@@ -91,48 +92,49 @@
                         <!-- H5 LEGGERMENTE A DESTRA ? -->
                     </div>
                 </section>
+            </div>
 
-                <!-- INFO SECTION -->
-                <section class="info-section mt-100">
-                    
+            <!-- INFO SECTION -->
+            <section class="info-section mt-100">
+                <div class="container">
                     <!-- INFO TUTORING -->
                     <div class="info-tutoring">
                         <h3 class="mb-25">The Trusted Name <br> 
                         for In-Home Tutoring.</h3>
-                        <p class="mb-25">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam eos in veritatis excepturi porro delectus optio libero, numquam, ex et nihil, eius ratione perferendis asperiores quasi dolorum neque sapiente sint?</p>
+                        <p class="mb-25">Lorem, elit. Ullam eos in veritatis excepturi porro delectus optio libero, numquam, ex et nihil, eius ratione perferendis asperiores quasi dolorum neque sapiente sint?</p>
                         <a class="bold txt-upper col-blue" href="#">learn more</a>
-                        <img class="img-resp" src="./img/main/info-section/h5-img-1.jpg" alt="Lorem ipsum dolor sit">
+                        <img class="img-resp mt-25" src="./img/main/info-section/h5-img-1.jpg" alt="Lorem ipsum dolor sit">
                     </div>
-
-                    <!-- USER POTENTIAL -->
-                    <div class="info-users mt-100">
-                        <div class="w-50 w-desktop users-img">
-                            <img class="img-resp" src="./img/main/info-section/h5-img-2.jpg" alt="Lorem ipsum dolor sit">
-                        </div>
-                        <div class="w-50 w-desktop users-txt">
-                            <h3 class="mb-25">Empowering Children to Reach Their Potentiel.</h3>
-                            <p class="mb-25">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam eos in veritatis excepturi porro delectus optio libero, numquam, ex et nihil, eius ratione perferendis asperiores quasi dolorum neque sapiente sint?</p>
-                            <div class="dates h-div col-blue">
-                                <span>
-                                    <h4>168</h4>
-                                    <small class="bold">User Stories</small>
-                                </span>
-                                <span>
-                                    <h4>347</h4>
-                                    <small class="bold">Events</small>
-                                </span>
-                            </div>
-                        </div>
+                </div>
+            </section>
+    
+            <!-- USER POTENTIAL -->
+            <section class="info-users mt-75">
+                <div class="w-50 w-desktop users-img">
+                    <img class="img-resp" src="./img/main/info-section/h5-img-2.jpg" alt="Lorem ipsum dolor sit">
+                </div>
+                <div class="w-50 w-desktop users-txt">
+                    <h3 class="mb-25">Empowering Children to Reach Their Potentiel.</h3>
+                    <p class="mb-25">Lorem elit. Ullam eos in veritatis excepturi porro delectus optio libero, numquam, ex et nihil, eius ratione perferendis asperiores quasi dolorum neque sapiente sint?</p>
+                    <div class="dates h-div col-blue">
+                        <span>
+                            <h4 class="txt-serif">168</h4>
+                            <small class="bold txt-serif">User Stories</small>
+                        </span>
+                        <span>
+                            <h4 class="txt-serif">347</h4>
+                            <small class="bold txt-serif">Events</small>
+                        </span>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
 
             <!-- STUDENTS SLIDER -->
             <section class="students-slider mt-50">
                 <!-- SLIDER TXTS -->
                 <div class="slider-txt txt-center">
                     <img src="./img/main/students-slider/testimonials-standard-2.png" alt="Lorem ipsum dolor sit amet">
-                    <p class="col-w">Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus obcaecati qui illum deleniti iste repudiandae dolor, sit amet consectetur psam ea libero iste in esse quo eos numquam ipsa ullam repellendus, alias praesentium quis atque ex ducimus deserunt illum!</p>
+                    <p class="col-w">consectetur adipisicing elit. Ducimus obcaecati qui illum deleniti iste repudiandae dolor, sit amet consectetur psam ea libero iste in esse quo eos numquam ipsa ullam repellendus, alias praesentium quis atque ex ducimus deserunt illum!</p>
                     <h5 class="col-w">Joan Collins</h5>
                     <small class="col-w bold txt-upper"> STUDENT </small>
                 </div>
@@ -149,7 +151,6 @@
             <section class="course-info-section mt-100">
                 <div class="container">
                     <div class="course-info mb-100">
-
                         <ul class="info-list v-list">
                             <li v-for="( el, i ) in infoList"
                                 @click="getIndexCourse(i)"
@@ -164,15 +165,20 @@
                         <div v-for="(el, i) in infoList" class="info-content" v-if="courseIndex === i">
                             <h3 class="mb-25">{{el.title}}</h3>
                             <p class="mb-50">{{ el.text }}</p>
-                            <ul class="v-list">
-                                <li v-for="item in el.list">
-                                    <i class="fas fa-check col-blue"></i>
-                                    {{ item }}
-                                </li>
-                            </ul>
-                            <img src="./img/main/courses/course-info/h12-tabs-icon-1.png" alt="lorem ipsum dates dates">
+                            <div class="content">
+                                <ul class="v-list content-list">
+                                    <li v-for="item in el.list">
+                                        <i class="fas fa-check col-blue"></i>
+                                        <p>
+                                            {{ item }}
+                                        </p>
+                                    </li>
+                                </ul>
+                                <div class="content-img">
+                                    <img class="img-resp" src="./img/main/courses/course-info/h12-tabs-icon-1.png" alt="lorem ipsum dates dates">
+                                </div>
+                            </div>
                         </div>
-
                     </div>        
                 </div>
             </section>
@@ -181,8 +187,8 @@
             <section class="popular-courses">
                 <div class="container popular-content">
                     <div class="txt-pop-course txt-center">
-                        <h2 class="mb-25">Popular Online Courses</h2>
-                        <p class="mb-100">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias nobis nulla dolores! Eveniet quaerat amet harum minus, dolore exercitationem numquam debitis qui laborum nostrum praesentium, laboriosam porro suscipit iure accusamus?</p>
+                        <h2>Popular Online Courses</h2>
+                        <p>Lore harum minus, dolore exercitationem numquamrum nostrum praesentium, laboriosam porro suscipit iure accusamus?</p>
                     </div>
                     <div class="course-slider">
                         <div class="md-cards">
@@ -215,10 +221,10 @@
                 
                 <!-- PLANS -->
                 <div class="plans">
-                    <div class="container">
+                    <div class="container plan-container">
                         <div class="plan-text txt-center">
                             <h2>Pricing Plans</h2>
-                            <p class="mt-25">Lorem, i maiores qui unde nostrum voluptate rem similique minus aliquam, amet autem, laboriosam ipsum libero?</p>
+                            <p>Lorem, i maiores qui unde nostrum voluptate, amet autem, laboriosam ipsum libero?</p>
                         </div>
                         <div class="plan-table mt-100">
                             <ul class="v-list">
@@ -286,9 +292,9 @@
                                     <td>6</td>
                                 </tr>
                                 <tr>
-                                    <td class="col-blue"><i class="fas fa-check"></i></td>
-                                    <td class="col-blue"><i class="fas fa-check"></i></td>
-                                    <td class="col-blue"><i class="fas fa-check"></i></td>
+                                    <td> 15 Days </td>
+                                    <td> 30 Days </td>
+                                    <td> 30 Days </td>
                                 </tr>
                                 <tr>
                                     <td class="col-blue"><i class="fas fa-check"></i></td>
@@ -296,29 +302,29 @@
                                     <td class="col-blue"><i class="fas fa-check"></i></td>
                                 </tr>
                                 <tr>
-                                    <td class="col-lg"> <i class="fas fa-times"></i> </td>
+                                    <td> <i class="fas fa-times"></i> </td>
                                     <td class="col-blue"><i class="fas fa-check"></i></td>
                                     <td class="col-blue"><i class="fas fa-check"></i></td>
                                     
                                 </tr>
                                 <tr>
-                                    <td class="col-lg"> <i class="fas fa-times"></i> </td>
+                                    <td> <i class="fas fa-times"></i> </td>
                                     <td class="col-blue"><i class="fas fa-check"></i></td>
                                     <td class="col-blue"><i class="fas fa-check"></i></td>
                                 </tr>
                                 <tr>
-                                    <td class="col-lg"> <i class="fas fa-times"></i> </td>
+                                    <td> <i class="fas fa-times"></i> </td>
                                     <td class="col-blue"><i class="fas fa-check"></i></td>
                                     <td class="col-blue"><i class="fas fa-check"></i></td>
                                 </tr>
                                 <tr>
-                                    <td class="col-lg"> <i class="fas fa-times"></i> </td>
+                                    <td> <i class="fas fa-times"></i> </td>
                                     <td class="col-blue"><i class="fas fa-check"></i></td>
                                     <td class="col-blue"><i class="fas fa-check"></i></td>
                                 </tr>
                                 <tr>
-                                    <td class="col-lg"> <i class="fas fa-times"></i> </td>
-                                    <td class="col-lg"> <i class="fas fa-times"></i> </td>
+                                    <td> <i class="fas fa-times"></i> </td>
+                                    <td> <i class="fas fa-times"></i> </td>
                                     <td class="col-blue"><i class="fas fa-check"></i></td>
                                 </tr>
                                 <tr>
@@ -332,15 +338,15 @@
                                         <a href="#" class="btn btn-outline">GET IT NOW</a>
                                     </td>
                                 </tr>
-                                <div class="btn-shop">
-                                    <a href="#" class="btn btn-square">
-                                        <img class="img-resp" src="./img/main/plans/svg-0.svg" alt="Lorem ipsum">
-                                    </a>
-                                    <a href="#" class="btn btn-square">
-                                        <img class="img-resp" src="./img/main/plans/svg-2.svg" alt="Lorem ipsum">
-                                    </a>
-                                </div>
                             </table>
+                            <div class="btn-shop">
+                                <a href="#" class="btn btn-square">
+                                    <img class="img-resp" src="./img/main/plans/svg-0.svg" alt="Lorem ipsum">
+                                </a>
+                                <a href="#" class="btn btn-square">
+                                    <img class="img-resp" src="./img/main/plans/svg-2.svg" alt="Lorem ipsum">
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -348,12 +354,11 @@
 
             <!-- ADVERTISING LIST -->
             <section class="adv-logos mb-100 mt-100">
-
-                <ul class="h-list txt-center">
+                <ul class="">
                     <li v-for=" (img,i) in  advList">
                         <a href="#"  @mouseover="changeH(i)" @mouseleave="changeH(i)">
-                            <img v-if=" indexAdv === i " :src="`./img/main/adv/${img.imgH}.png`" alt="lorem">
-                            <img v-else :src="`./img/main/adv/${img.img}.png`" alt="lorem">
+                            <img class="img-resp" v-if=" indexAdv === i " :src="`./img/main/adv/${img.imgH}.png`" alt="lorem">
+                            <img class="img-resp" v-else :src="`./img/main/adv/${img.img}.png`" alt="lorem">
                         </a>
                     </li>
                 </ul>
