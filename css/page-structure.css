@@ -8,6 +8,15 @@
     position: fixed;
     z-index: 10;
     width: 100%;
+    transition: background 350ms ;
+}
+
+.main-header.scrolled {
+    background: #fff;
+}
+
+.main-header.scrolled .navbar a  {
+    color: #000;
 }
 
 /* NAVBAR */
@@ -21,7 +30,7 @@
 
 .navbar a {
     color: #fbfbfc;
-}
+}   
 
 .navbar i {
     font-size: 16px;
@@ -100,6 +109,7 @@
     bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
+    cursor: pointer;
 }
 
 /* MAIN FOOTER */
@@ -120,6 +130,7 @@
 
 .footer-nav {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .footer-nav .info,
@@ -195,4 +206,30 @@
 
 .main-footer .copy .copy-right li {
     margin-left: 20px;
+}
+
+/* TABLET UP TO 1024px */
+
+@media screen and ( max-width: 1024px ) {
+}
+
+/* SMARTPHONE UP TO 768px */
+
+@media screen and ( max-width: 768px ) {
+
+    /* MAIN FOOTER */
+    .footer-nav {
+        text-align: center;
+    }
+
+    .footer-nav .info,
+    .footer-nav .courses,
+    .footer-nav .support,
+    .footer-nav .map-learning {
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }

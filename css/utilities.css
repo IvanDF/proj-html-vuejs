@@ -233,9 +233,9 @@ h6 {
 /* OTHERS */
 
 .badge {
-    position: absolute;
-    top: 38px;
-    right: 0;
+    position: absolute;     
+    top: 30px;
+    right: 7px;
     width: 15px;
     height: 15px;
     line-height: 15px;
@@ -250,6 +250,7 @@ h6 {
 [class*='cards'] {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .sm-cards .card-blue {

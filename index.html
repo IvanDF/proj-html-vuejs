@@ -27,14 +27,15 @@
 
     <div id="iAccademy">
         <!-- MAIN HEADER -->
-        <header class="main-header">
+        <header :class="['main-header', scrolled ? 'scrolled' : '' ]" >
             <!-- CONTAINER -->
             <div class="container">
                 <!-- NAVBAR -->
                 <nav class="navbar">
                     <!-- NAVBAR LOGO -->
                     <div class="nav-img">
-                        <img class="img-resp" src="./img/header/logo-light.png" alt="iAccademy">
+                        <img v-if="scrolled" class="img-resp" src="./img/header/logo-default.png" alt="iAccademy">
+                        <img v-else="scrolled" class="img-resp" src="./img/header/logo-light.png" alt="iAccademy">
                     </div>
                     <!-- NAVBAR MENU -->
                     <div class="desktop-only nav-menu">
@@ -62,23 +63,28 @@
         <main class="main-section">
 
             <!-- HERO SLIDER -->
-            <section class="hero-slider">
+            <section class="hero-slider"
+                @mouseenter="stopSlider"
+                @mouseleave="startSlider"
+                >
                 
                 <!-- SLIDER IMAGES -->
                 <div class="slider-img">
-                    <img src="./img/main/hero-slider/h5-slide-3-background.jpg" alt="">
+                    <img :src="`./img/main/hero-slider/${heroSlider[heroIndex].image}.jpg`" alt="">
                 </div>
                 <!-- SLIDER TXTS -->
                 <div class="slider-txt txt-center">
-                    <h1 class="col-w">Contemporary Ideas</h1>
-                    <p>Lorem ipsum dolor, elit. Sed odio ipsam iste in esse quo eos numquam ipsa ullam repellendus, alias praesentium quis atque ex ducimus deserunt illum!</p>
-                    <a class="btn btn-blue" href="#"> register now </a>
+                    <h1 class="col-w">{{heroSlider[heroIndex].title}}</h1>
+                    <p>{{heroSlider[heroIndex].text}}</p>
+                    <a class="btn btn-blue" href="#"> {{heroSlider[heroIndex].button}} </a>
                 </div>
                 <!-- SLIDER DOT NAVIGATION -->
                 <div class="dot-nav">
-                    <span class="circle"></span>
-                    <span class="circle"></span>
-                    <span class="circle active"></span>
+                    <span v-for="(el,i) in heroSlider" 
+                        @click="navCircleHero(i)" 
+                        :class="['circle', heroIndex === i ? 'active' : '' ]"
+                        >
+                    </span>
                 </div>
 
             </section>
@@ -133,16 +139,17 @@
             <section class="students-slider mt-50">
                 <!-- SLIDER TXTS -->
                 <div class="slider-txt txt-center">
-                    <img src="./img/main/students-slider/testimonials-standard-2.png" alt="Lorem ipsum dolor sit amet">
-                    <p class="col-w">consectetur adipisicing elit. Ducimus obcaecati qui illum deleniti iste repudiandae dolor, sit amet consectetur psam ea libero iste in esse quo eos numquam ipsa ullam repellendus, alias praesentium quis atque ex ducimus deserunt illum!</p>
-                    <h5 class="col-w">Joan Collins</h5>
-                    <small class="col-w bold txt-upper"> STUDENT </small>
+                    <img :src="`./img/main/students-slider/${studentSlider[studentsIndex].image}.png`" alt="Lorem ipsum dolor sit amet">
+                    <p class="col-w">{{studentSlider[studentsIndex].text}}</p>
+                    <h5 class="col-w">{{studentSlider[studentsIndex].name}}</h5>
+                    <small class="col-w bold txt-upper"> {{studentSlider[studentsIndex].type}} </small>
                 </div>
                 <!-- SLIDER DOT NAVIGATION -->
                 <div class="dot-nav">
-                    <span class="circle"></span>
-                    <span class="circle active"></span>
-                    <span class="circle"></span>
+                    <span v-for="(el,i) in studentSlider" 
+                    @click="navCircleStudents(i)" 
+                    :class="['circle', studentsIndex === i ? 'active' : '' ]"
+                    >
                 </div>
             </section>
 
@@ -190,9 +197,9 @@
                         <h2>Popular Online Courses</h2>
                         <p>Lore harum minus, dolore exercitationem numquamrum nostrum praesentium, laboriosam porro suscipit iure accusamus?</p>
                     </div>
-                    <div class="course-slider">
-                        <div class="md-cards">
-                            <div v-for="(el, index) in courseSlider" class="card">
+                    <div v-for="(e, index) in courseSlider" class="course-slider">
+                        <div v-show="coursesIndex === index" class="md-cards">
+                            <div v-for="el in e.slider" class="card">
                                 <div class="card-img">
                                     <img class="img-resp" :src="`${el.image}.jpg`" :alt="el.title">
                                 </div>
@@ -208,11 +215,12 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="dot-nav mt-50">
-                            <span class="circle"></span>
-                            <span class="circle active"></span>
-                            <span class="circle"></span>
+                            <div class="dot-nav mt-50">
+                                <span v-for="(el,i) in courseSlider" 
+                                @click="navCircleCourses(i)" 
+                                :class="['circle', coursesIndex === i ? 'active' : '' ]"
+                                >
+                            </div>
                         </div>
                     </div>
                     <hr class="h-line">
@@ -354,14 +362,16 @@
 
             <!-- ADVERTISING LIST -->
             <section class="adv-logos mb-100 mt-100">
-                <ul class="">
-                    <li v-for=" (img,i) in  advList">
-                        <a href="#"  @mouseover="changeH(i)" @mouseleave="changeH(i)">
-                            <img class="img-resp" v-if=" indexAdv === i " :src="`./img/main/adv/${img.imgH}.png`" alt="lorem">
-                            <img class="img-resp" v-else :src="`./img/main/adv/${img.img}.png`" alt="lorem">
-                        </a>
-                    </li>
-                </ul>
+                <div class="container">
+                    <ul class="">
+                        <li v-for=" (img,i) in  advList">
+                            <a href="#"  @mouseover="changeH(i)" @mouseleave="changeH(i)">
+                                <img class="img-resp" v-if=" indexAdv === i " :src="`./img/main/adv/${img.imgH}.png`" alt="lorem">
+                                <img class="img-resp" v-else :src="`./img/main/adv/${img.img}.png`" alt="lorem">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </section>
         </main>
 

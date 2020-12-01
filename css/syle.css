@@ -9,6 +9,9 @@
     border: 2px transparent;
     border-radius: 50%;
     background: #ffffff4d;
+    transition: background 350ms,
+                border 350ms;
+
 }
 
 .hero-slider .dot-nav .circle:hover,
@@ -61,6 +64,11 @@
 
 .users-txt {
     padding: 30px 90px 30px 30px;
+}
+
+.users-img,
+.users-txt {
+    max-width: 600px;
 }
 
 .users-txt span {
@@ -119,8 +127,10 @@
     height: 13px;
     border-radius: 50%;
     background: rgba(255, 255, 255, .5);
+    transition: background 350ms;
 }
 
+.students-slider .dot-nav .circle:hover,
 .students-slider .dot-nav .circle.active {
     background: #fff;
 }
@@ -182,6 +192,7 @@
     align-items: flex-start;
     margin: 25px 0;
     font-size: 18px;
+    padding: 0 15px;
 }
 
 .course-info .info-content i {
@@ -204,8 +215,9 @@
 .popular-courses {
     position: relative;
     background: url('../img/main/courses/popular-courses/page-background-img.png');
+    background-size: cover;
     background-position: left top;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     padding: 100px 0;
     border-bottom: 2px solid #eaebeb;
 }
@@ -292,6 +304,7 @@
     display:flex;
     justify-content: center;
     position: relative;
+    width: 100%;
 }
 
 .popular-courses .dot-nav .circle {
@@ -435,6 +448,7 @@
     justify-content: center;
     align-items: center;
     list-style: none;
+    flex-wrap: wrap;
 }
 
 .adv-logos li {
@@ -446,17 +460,58 @@
 @media screen and ( max-width: 1024px ) {
 
     /* MAIN */
-    /* SMALL CARDS */
+    /* CARDS */
 
     .sm-cards .card-blue {
         width: calc( ( 100% / 3 ) - 20px );
         margin: 10px;
     }
 
+    .popular-courses .md-cards .card {
+        width: 100%;
+        margin: 0;
+    }
+
     /* USER POTENTIAL */
 
     .info-users {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+}
+
+/* SMARPHONE UP TO 768px */
+
+@media screen and ( max-width: 768px ) {
+
+    /* MAIN */
+    /* SMALL CARDS */
+
+    .sm-cards .card-blue {
+        width: 100%;
+        max-width: 200px;
+        margin: 0
+    }
+
+    /* USER POTENTIAL */
+
+    .info-users {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* ADVERTISING LIST */
+
+    .adv-logos li {
+        width: calc( 100% / 2 ) ;
+        margin: 15px 0;
     }
 
 }
