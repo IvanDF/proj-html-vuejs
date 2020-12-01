@@ -182,7 +182,7 @@
                                     </li>
                                 </ul>
                                 <div class="content-img">
-                                    <img class="img-resp" src="./img/main/courses/course-info/h12-tabs-icon-1.png" alt="lorem ipsum dates dates">
+                                    <img class="img-resp" :src="`./img/main/courses/course-info/${el.image}.png`" alt="lorem ipsum dates dates">
                                 </div>
                             </div>
                         </div>
@@ -201,7 +201,7 @@
                         <div v-show="coursesIndex === index" class="md-cards">
                             <div v-for="el in e.slider" class="card">
                                 <div class="card-img">
-                                    <img class="img-resp" :src="`${el.image}.jpg`" :alt="el.title">
+                                    <img class="img-resp" :src="`./img/main/courses/popular-courses/${el.image}.jpg`" :alt="el.title">
                                 </div>
                                 <div class="card-txt">
                                     <strong class="txt-serif">{{ el.title }}</strong>
