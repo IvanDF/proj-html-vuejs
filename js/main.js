@@ -12,12 +12,21 @@
         scrolled: false,
 
         // POPULATING NAVBAR LIST
+        dropHover: 0,
         navbarList: [
             {
                 item: 'home',
             },
             {
                 item: 'courses',
+                dropdown: [
+                    'Web Design',
+                    'Web Development',
+                    'Graphic Desing',
+                    'Marketing',
+                    'Languages',
+                    'Android Developer',
+                ]
             },
             {
                 item: 'instructors',
@@ -468,6 +477,15 @@
         },
         stopSlider() {
             clearInterval(this.intervalId);
+        },
+        // SHOW DROPDOWN
+        showDropdown(index) {
+
+            if ( this.dropHover === 0 ) {
+                this.dropHover = index
+            } else {
+                this.dropHover = 0
+            }
         },
     },
     mounted(){

@@ -17,7 +17,6 @@
 .hero-slider .dot-nav .circle:hover,
 .hero-slider .dot-nav .circle.active {
     position: relative;
-    transform: scale(1.25,1.25);
     border: 1.5px solid#fff;
     background: transparent;
 }
@@ -26,13 +25,14 @@
 .hero-slider .dot-nav .circle.active::after {
     content: '';
     position: absolute;
+    display: block;
     top: 50%;
     left: 50%;
+    transform: translate( -55%, -55% );
     width: 5px;
     height: 5px;
     background: #fff;
     border-radius: 50%;
-    transform: translate( -50%, -50% );
 }
 
 /* SMALL CARDS */
@@ -314,8 +314,10 @@
     margin: 0 8px;
     border-radius: 50%;
     background: #9ce0ff;
+    cursor: pointer;
 }
 
+.popular-courses .dot-nav .circle:hover,
 .popular-courses .dot-nav .circle.active {
     background: #40c4ff;
 }
@@ -360,8 +362,10 @@
 }
 
 .plans ul li h5 {
+    display: flex;
+    align-items: flex-end;
     color: #000;
-    margin-top: 120px;
+    height: 250px;
     font-size: 24px;
     line-height: 1.5;
 }
@@ -417,6 +421,7 @@
 
 .plans .btn-cell .btn {
     padding: 15px 25px;
+    display: block;
 }
 
 .plans .btn-shop {
@@ -506,6 +511,21 @@
         align-items: center;
         text-align: center;
     }
+
+    /* COURSE */
+    /* COURSE INFO */
+
+    .course-info {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .course-info .info-item {
+        padding: 20px 25px;
+    }
+    
+
 
     /* ADVERTISING LIST */
 

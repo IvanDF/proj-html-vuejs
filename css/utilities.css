@@ -108,6 +108,34 @@ h6 {
     font-family: 'Merriweather', serif;
 }
 
+/* DROPDOWN */
+
+.dropdown-menu {
+    position: relative;
+}
+
+.dropdown-list {
+    position: absolute;
+    display: none;
+    top: 60px;
+    left: -45px;
+    line-height: 2.5;
+    padding: 20px 35px;
+    background: #fff
+}
+
+.dropdown-list .dropdown-item a {
+    color: #000;
+}
+
+.dropdown-list.active {
+    display: block;
+}
+
+.dropdown-list a {
+    color: #000;
+}
+
 /* TEXT SETTINGS */
 
 .txt-center{
@@ -214,6 +242,15 @@ h6 {
     position: fixed;
     right: 0;
     bottom: 0;
+}
+
+.btn-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-top i {
+    font-size: 22px;
 }
 
 /* LAYOUT */

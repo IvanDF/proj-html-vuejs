@@ -40,10 +40,17 @@
                     <!-- NAVBAR MENU -->
                     <div class="desktop-only nav-menu">
                         <ul class="nav-list txt-upper h-list">
-                            <li v-for=" ( el , i ) in navbarList " class="nav-item">
-                                <a class="col-w" href="#">
+                            <li v-for=" ( el , i ) in navbarList " :class="['nav-item', el.dropdown ? 'dropdown-menu' : '']" 
+                                @click="showDropdown(i)" 
+                                >
+                                <a class="col-w" href="#"  @click.prevent>
                                     {{ el.item }}
                                 </a>
+                                <ul v-if="el.dropdown" :class="['dropdown-list', dropHover === i ? 'active' : ' ' ]" >
+                                    <li v-for=" e in el.dropdown " class="dropdown-item">
+                                        <a href="#">{{e}}</a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -461,7 +468,12 @@
                 </div>
             </div>
         </footer>
-        <a href="#" class="btn btn-fx-bottom btn-square btn-blue txt-center"> ^ <br> TOP </a>
+        <a href="#" class="btn btn-fx-bottom btn-square btn-blue txt-center btn-top"> 
+            <i class="fas fa-chevron-up"></i>
+            <span>
+                TOP
+            </span>
+        </a>
     </div>
     
     <!-- MAIN JS -->
