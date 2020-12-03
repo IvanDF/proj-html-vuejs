@@ -3,10 +3,12 @@
 
 .hero-slider .dot-nav .circle {
     margin: 0 3px;
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     width: 15px;
     height: 15px;
-    border: 2px transparent;
+    border: 1.5px transparent;
     border-radius: 50%;
     background: #ffffff4d;
     transition: background 350ms,
@@ -14,25 +16,26 @@
 
 }
 
-.hero-slider .dot-nav .circle:hover,
+.hero-slider .dot-nav .circle.active,
 .hero-slider .dot-nav .circle.active {
-    position: relative;
     border: 1.5px solid#fff;
     background: transparent;
 }
 
-.hero-slider .dot-nav .circle:hover::after,
-.hero-slider .dot-nav .circle.active::after {
-    content: '';
-    position: absolute;
+.hero-slider .dot-nav .circle .small-circle,
+.hero-slider .dot-nav .circle .small-circle {
+    opacity: 0;
     display: block;
-    top: 50%;
-    left: 50%;
-    transform: translate( -55%, -55% );
     width: 5px;
     height: 5px;
-    background: #fff;
     border-radius: 50%;
+    background: #fff;
+    transition: opacity 350ms;
+}
+
+.hero-slider .dot-nav .circle:hover .small-circle,
+.hero-slider .dot-nav .circle.active .small-circle {
+    opacity: 1;
 }
 
 /* SMALL CARDS */
@@ -40,7 +43,8 @@
 .sm-cards .card-blue {
     width: calc( ( 100% / 6 ) - 20px );
     margin: 10px;
-    border: 1px solid #efefef;    
+    border: 1px solid #efefef;  
+    transition: background 350ms;  
 }
 
 .sm-cards .card-blue:hover {
@@ -91,11 +95,31 @@
 /* STUDENTS SLIDER */
 
 .students-slider {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     background: url('../img/main/students-slider/h5-parallax-img-1.png');
     background-position: center top;
+}
+
+/* NEXT & PREV BUTTONS */
+
+.students-slider:hover .next,
+.students-slider:hover .prev {
+    opacity: 1;
+}
+
+.students-slider:hover .next {
+    right: 20px;
+}
+
+.students-slider:hover .prev {
+    left: 20px;
+}
+
+.hero-slider .slider-img {
+    height: 100%;
 }
 
 .students-slider .slider-txt {
@@ -223,7 +247,32 @@
 }
 
 .popular-courses .popular-content {
+    position: relative;
     padding: 100px 0;
+}
+
+/* NEXT & PREV BUTTONS */
+
+.popular-content .next,
+.popular-content .prev {
+    color: #000;
+}
+
+.popular-content:hover .next,
+.popular-content:hover .prev {
+    opacity: 1;
+}
+
+.popular-content:hover .next {
+    right: -25px;
+}
+
+.popular-content:hover .prev {
+    left: -25px;
+}
+
+.hero-slider .slider-img {
+    height: 100%;
 }
 
 .popular-courses .txt-pop-course {
@@ -238,6 +287,7 @@
     width: calc( ( 100% / 3 ) - 30px );
     margin: 15px;
     border: 1px solid #eaebeb;
+    background: #fff;
 }
 
 .popular-courses .md-cards .card-txt {
@@ -245,7 +295,6 @@
     display: flex;
     flex-direction: column;
     padding: 20px 15px;
-    background: #fff;
 }
 
 .popular-courses .md-cards .card-txt strong {
@@ -270,7 +319,6 @@
     color: #cecece;
     margin-top: 20px;
 }
-
 
 .popular-courses .md-cards .card-txt .tags i,
 .popular-courses .md-cards .card-txt .tags span {
@@ -322,10 +370,7 @@
     background: #40c4ff;
 }
 
-.popular-content .h-line {
-    position: absolute;
-    bottom: 58%;
-    left: 0;
+.h-line {
     width: 100%;
     border: 1px solid #eaebeb;
 }
@@ -336,98 +381,99 @@
     padding: 100px 0;
 }
 
-.plans h2 {
-    margin-bottom: 20px;
-}
-
-.plans .plan-container {
-    position: relative;
-}
-
-.plans .plan-table {
+.grid-plan {
     display: flex;
-    background: #fff;
 }
 
-.plans ul {
+.grid-titles {
     width: 25%;
-    border-top: 4px solid #d6f2ff;
+    height: 900px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-.plans ul li {
-    padding: 20px;
-    color: #808080;
+.grid-titles span {
     border: 1px solid #eaebeb;
-    font-weight: 700;
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
 }
 
-.plans ul li h5 {
+.grid-titles span.deal {
     display: flex;
     align-items: flex-end;
     color: #000;
-    height: 250px;
-    font-size: 24px;
+    height: 300px;
+}
+
+.grid-titles span h5 {
+    font-size: 25px;
     line-height: 1.5;
+    margin-bottom: 25px;
 }
 
-.plans table {
-    margin: 0;
-    border-collapse: collapse;
-    width: 75%;
-    color: #808080;
-}
-
-.plans th,
-.plans td {
-    width: calc(100% / 3);
-    padding: 20px;
-    margin: 0;
-    border: 1px solid #eaebeb;
-    font-size: 18px;
-    text-align: center;
-}
-
-.plans th {
+.grid-titles span.deal,
+.grid-options .option-title {
     border-top: 4px solid #d6f2ff;
 }
 
-.plans th img {
-    margin-top: 25px;
-    margin-bottom: 20px;
+.grid-options .option-button,
+.grid-options .option-title {
+    background: #f7fdff;
 }
 
-.plans h5 {
+.grid-options .option-title.active {
+    border-top: 4px solid #40c4ff;
+}
+
+.grid-titles span {
+    font-weight: 700;
+}
+.grid-titles span,
+.grid-options span {
+    color: #808080;
+    border: 1px solid #eaebeb;
+    background: #fff;
+}
+
+.grid-options {
+    position: relative;
+    width: 75%;
+    height: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: stretch;
+}
+
+.grid-options span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-options small {
+    text-align: center;
+}
+
+.grid-options h5 {
+    color: #000;
     font-size: 22px;
     margin-bottom: 20px;
 }
 
-.plans h5 small {
-    font-size: 18px;
-    color: #545454;
+.grid-options span {
+    border: 1px solid #eaebeb;
 }
 
-.plans th.active {
-    border-top: 4px solid #40c4ff;
-}
-
-.plans th.plan {
-    background: #f7fdff;
-}
-
-.plans .btn-cell {
-    height: 100px;
-    background: #f7fdff;
-}
-
-.plans .btn-cell .btn {
-    padding: 15px 25px;
-    display: block;
+.grid-options span img {
+    margin: 20px 0;
 }
 
 .plans .btn-shop {
     position: absolute;
-    right: 0;
-    top: 220px;
+    right: -30px;
+    top: 20px;
     display: flex;
     flex-direction: column;
 }
@@ -489,6 +535,20 @@
 
 }
 
+/* SMARPHONE UP TO 1024px */
+
+@media screen and ( max-width: 1024px ) {
+
+    .grid-titles {
+        display: none;
+    }
+    
+    .grid-options {
+        width: 100%
+    }
+
+}
+
 /* SMARPHONE UP TO 768px */
 
 @media screen and ( max-width: 768px ) {
@@ -524,8 +584,6 @@
     .course-info .info-item {
         padding: 20px 25px;
     }
-    
-
 
     /* ADVERTISING LIST */
 
@@ -533,5 +591,11 @@
         width: calc( 100% / 2 ) ;
         margin: 15px 0;
     }
+
+    .popular-content .next,
+    .popular-content .prev {
+        display: none;
+    }
+
 
 }

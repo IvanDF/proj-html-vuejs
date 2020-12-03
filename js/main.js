@@ -19,14 +19,6 @@
             },
             {
                 item: 'courses',
-                dropdown: [
-                    'Web Design',
-                    'Web Development',
-                    'Graphic Desing',
-                    'Marketing',
-                    'Languages',
-                    'Android Developer',
-                ]
             },
             {
                 item: 'instructors',
@@ -118,13 +110,13 @@
             },
             {
                 image: 'testimonials-standard-1',
-                text: 'consectetur adipisicing elit. Ducimus obcaecati qui illum deleniti iste repudiandae dolor, sit amet consectetur psam ea libero iste in esse quo eos numquam ipsa ullam repellendus, alias praesentium quis atque ex ducimus deserunt illum!',
+                text: 'consectet sit amet consectetur psam ea libero iste in esse quo eos numquam ipsa ullam repellendus, alias praesentium quis atque ex ducimus deserunt illum!',
                 name: 'Arden Cho',
                 type: 'TEACHER',
             },
             {
                 image: 'testimonials-standard-3',
-                text: 'consectetur adipisicing elit. Ducimus obcaecati qui illum deleniti iste repudiandae dolor, sit amet consectetur psam ea libero iste in esse quo eos numquam ipsa ullam repellendus, alias praesentium quis atque ex ducimus deserunt illum!',
+                text: 'consectetur adipisicingconsectetur adipisicingconsectetur adipisicingconsectetur adipisicingconsectetur adipisicingconsectetur adipisicing elit. Ducimus obcaecati qui illum deleniti iste repudiandae dolor, sit amet consectetur psam ea libero iste in esse quo eos numquam ipsa ullam repellendus, alias praesentium quis atque ex ducimus deserunt illum!',
                 name: 'Scott Rossi',
                 type: 'DESIGNER',
             },
@@ -447,6 +439,40 @@
             }
 
         },
+        prev(){
+            this.heroIndex --;
+
+            if ( this.heroIndex < 0 ) {
+                this.heroIndex = this.heroSlider.length-1;
+            }
+            this.studentsIndex --;
+
+            if ( this.studentsIndex < 0 ) {
+                this.studentsIndex = this.studentSlider.length-1;
+            }
+            this.coursesIndex --;
+
+            if ( this.coursesIndex < 0 ) {
+                this.coursesIndex = this.courseSlider.length-1;
+            }
+        },
+        next(){
+            this.heroIndex ++;
+
+            if ( this.heroIndex > this.heroSlider.length-1 ) {
+                this.heroIndex = 0;
+            }
+            this.studentsIndex ++;
+
+            if ( this.studentsIndex > this.studentSlider.length-1) {
+                this.studentsIndex = 0;
+            }
+            this.coursesIndex ++;
+
+            if ( this.coursesIndex > this.courseSlider.length-1 ) {
+                this.coursesIndex = 0;
+            }
+        },
         navCircleHero( index ) {
             this.heroIndex = index
         },
@@ -477,15 +503,6 @@
         },
         stopSlider() {
             clearInterval(this.intervalId);
-        },
-        // SHOW DROPDOWN
-        showDropdown(index) {
-
-            if ( this.dropHover === 0 ) {
-                this.dropHover = index
-            } else {
-                this.dropHover = 0
-            }
         },
     },
     mounted(){

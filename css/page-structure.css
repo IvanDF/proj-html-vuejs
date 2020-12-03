@@ -75,6 +75,45 @@
     height: 650px;
 }
 
+/* NEXT & PREV BUTTONS */
+
+.next,
+.prev {
+    opacity: 0;
+    position: absolute;
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+    transition: opacity 250ms,
+                right 350ms,
+                left 350ms;
+}
+
+.hero-slider:hover .next,
+.hero-slider:hover .prev {
+    opacity: 1;
+}
+
+.hero-slider:hover .next {
+    right: 20px;
+}
+
+.hero-slider:hover .prev {
+    left: 20px;
+}
+
+.next {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .hero-slider .slider-img {
     height: 100%;
 }

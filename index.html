@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iAccademy</title>
     <!-- ICON -->
-    <link rel="icon" href="./img/favicon/favicon.png">
+    <link rel="icon" href="./img/favicon/sidearea-logo.png">
     <!-- FONT -->
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -40,23 +40,16 @@
                     <!-- NAVBAR MENU -->
                     <div class="desktop-only nav-menu">
                         <ul class="nav-list txt-upper h-list">
-                            <li v-for=" ( el , i ) in navbarList " :class="['nav-item', el.dropdown ? 'dropdown-menu' : '']" 
-                                @click="showDropdown(i)" 
-                                >
-                                <a class="col-w" href="#"  @click.prevent>
+                            <li v-for=" ( el , i ) in navbarList " class="nav-item">
+                                <a @click.prevent class="col-w" href="#">
                                     {{ el.item }}
                                 </a>
-                                <ul v-if="el.dropdown" :class="['dropdown-list', dropHover === i ? 'active' : ' ' ]" >
-                                    <li v-for=" e in el.dropdown " class="dropdown-item">
-                                        <a href="#">{{e}}</a>
-                                    </li>
-                                </ul>
                             </li>
                         </ul>
                     </div>
                     <ul class="nav-cta h-list">
                         <li v-for=" ( el, i ) in ctaList " class="cta-item">
-                            <a href="#">
+                            <a @click.prevent href="#">
                                 <i :class="`fas ${el.icon}`"></i>
                                 <span v-if=" el.bagde ? 'bagde' : '' " class="badge" > 0 </span>
                             </a>
@@ -74,6 +67,10 @@
                 @mouseenter="stopSlider"
                 @mouseleave="startSlider"
                 >
+
+                <!-- NEXT & PREV BUTTONS -->    
+                <i @click="next" class="next fas fa-chevron-right"></i>
+                <i @click="prev" class="prev fas fa-chevron-left"></i>
                 
                 <!-- SLIDER IMAGES -->
                 <div class="slider-img">
@@ -91,6 +88,7 @@
                         @click="navCircleHero(i)" 
                         :class="['circle', heroIndex === i ? 'active' : '' ]"
                         >
+                        <span class="small-circle" if="heroIndex === i"></span>
                     </span>
                 </div>
 
@@ -102,7 +100,6 @@
                     <div v-for=" ( el, i ) in smCards " class="card-blue txt-center">
                         <img :src="`./img/main/sm-cards/h5-custom-icon-${el.image}.png`" alt="World">
                         <h5 class="mt-25"> {{el.title}} </h5>
-                        <!-- H5 LEGGERMENTE A DESTRA ? -->
                     </div>
                 </section>
             </div>
@@ -115,7 +112,7 @@
                         <h3 class="mb-25">The Trusted Name <br> 
                         for In-Home Tutoring.</h3>
                         <p class="mb-25">Lorem, elit. Ullam eos in veritatis excepturi porro delectus optio libero, numquam, ex et nihil, eius ratione perferendis asperiores quasi dolorum neque sapiente sint?</p>
-                        <a class="bold txt-upper col-blue" href="#">learn more</a>
+                        <a @click.prevent class="bold txt-upper col-blue" href="#">learn more</a>
                         <img class="img-resp mt-25" src="./img/main/info-section/h5-img-1.jpg" alt="Lorem ipsum dolor sit">
                     </div>
                 </div>
@@ -143,7 +140,15 @@
             </section>
 
             <!-- STUDENTS SLIDER -->
-            <section class="students-slider mt-50">
+            <section class="students-slider mt-50"
+                @mouseenter="stopSlider"
+                @mouseleave="startSlider"
+                >
+
+                <!-- NEXT & PREV BUTTONS -->    
+                <i @click="next" class="next fas fa-chevron-right"></i>
+                <i @click="prev" class="prev fas fa-chevron-left"></i>
+
                 <!-- SLIDER TXTS -->
                 <div class="slider-txt txt-center">
                     <img :src="`./img/main/students-slider/${studentSlider[studentsIndex].image}.png`" alt="Lorem ipsum dolor sit amet">
@@ -151,6 +156,7 @@
                     <h5 class="col-w">{{studentSlider[studentsIndex].name}}</h5>
                     <small class="col-w bold txt-upper"> {{studentSlider[studentsIndex].type}} </small>
                 </div>
+
                 <!-- SLIDER DOT NAVIGATION -->
                 <div class="dot-nav">
                     <span v-for="(el,i) in studentSlider" 
@@ -204,7 +210,17 @@
                         <h2>Popular Online Courses</h2>
                         <p>Lore harum minus, dolore exercitationem numquamrum nostrum praesentium, laboriosam porro suscipit iure accusamus?</p>
                     </div>
-                    <div v-for="(e, index) in courseSlider" class="course-slider">
+                    <div v-for="(e, index) in courseSlider" 
+                        class="course-slider"
+                        @mouseenter="stopSlider"
+                        @mouseleave="startSlider"
+                        >
+
+                        <!-- NEXT & PREV BUTTONS -->    
+                        <i @click="next" class="next fas fa-chevron-right"></i>
+                        <i @click="prev" class="prev fas fa-chevron-left"></i>
+
+                        <!-- MD CARDS -->
                         <div v-show="coursesIndex === index" class="md-cards">
                             <div v-for="el in e.slider" class="card">
                                 <div class="card-img">
@@ -230,137 +246,184 @@
                             </div>
                         </div>
                     </div>
-                    <hr class="h-line">
-                    <!-- SERVE? -->
                 </div>
+                <hr class="h-line">
                 
                 <!-- PLANS -->
                 <div class="plans">
                     <div class="container plan-container">
                         <div class="plan-text txt-center">
                             <h2>Pricing Plans</h2>
-                            <p>Lorem, i maiores qui unde nostrum voluptate, amet autem, laboriosam ipsum libero?</p>
+                            <p class="mt-25">Lorem, i maiores qui unde nostrum voluptate, amet autem, laboriosam ipsum libero?</p>
                         </div>
-                        <div class="plan-table mt-100">
-                            <ul class="v-list">
-                                <li>
+                        <div class="grid-plan mt-75">
+                            <div class="grid-titles">
+                                <span class="title-item deal">
                                     <h5>Save up to 40% by paying weekly</h5>
-                                </li>
-                                <li>
+                                </span>
+                                <span class="title-item">
                                     Number of Courses
-                                </li>
-                                <li>
+                                </span>
+                                <span class="title-item">
                                     Time
-                                </li>
-                                <li>
-                                    Web designing
-                                </li>
-                                <li>
+                                </span>
+                                <span class="title-item">
+                                    Web design
+                                </span>
+                                <span class="title-item">
                                     Human-Centered Design
-                                </li>
-                                <li>
+                                </span>
+                                <span class="title-item">
                                     Basic Marketing
-                                </li>
-                                <li>
+                                </span>
+                                <span class="title-item">
                                     Python for Everybody
-                                </li>
-                                <li>
+                                </span>
+                                <span class="title-item">
                                     Android Developer
-                                </li>
-                                <li>
+                                </span>
+                                <span class="title-item">
                                     Business English
-                                </li>
-                            </ul>
-                            <table>
-                                <tr>
-                                    <th class="plan">
-                                        <img src="./img/main/plans/h5-custom-icon-7.png" alt="Standard plan">
-                                        <h5>Standard</h5>
-                                        <h5 class="price">
-                                            <small class="txt-sans">
-                                                $12
-                                            </small>    
-                                        </h5>
-                                    </th>
-                                    <th class="plan active">
-                                        <img src="./img/main/plans/h5-custom-icon-8.png" alt="Professional plan">
-                                        <h5>Professional</h5>
-                                        <h5 class="price">
-                                            <small class="txt-sans">
-                                                $59
-                                            </small>    
-                                        </h5>
-                                    </th>
-                                    <th class="plan">
-                                        <img src="./img/main/plans/h5-custom-icon-9.png" alt="Advanced plan">
-                                        <h5>Advanced</h5>
-                                        <h5 class="price">
-                                            <small class="txt-sans">
-                                                $88
-                                            </small>    
-                                        </h5>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>4</td>
-                                    <td>6</td>
-                                </tr>
-                                <tr>
-                                    <td> 15 Days </td>
-                                    <td> 30 Days </td>
-                                    <td> 30 Days </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-blue"><i class="fas fa-check"></i></td>
-                                    <td class="col-blue"><i class="fas fa-check"></i></td>
-                                    <td class="col-blue"><i class="fas fa-check"></i></td>
-                                </tr>
-                                <tr>
-                                    <td> <i class="fas fa-times"></i> </td>
-                                    <td class="col-blue"><i class="fas fa-check"></i></td>
-                                    <td class="col-blue"><i class="fas fa-check"></i></td>
-                                    
-                                </tr>
-                                <tr>
-                                    <td> <i class="fas fa-times"></i> </td>
-                                    <td class="col-blue"><i class="fas fa-check"></i></td>
-                                    <td class="col-blue"><i class="fas fa-check"></i></td>
-                                </tr>
-                                <tr>
-                                    <td> <i class="fas fa-times"></i> </td>
-                                    <td class="col-blue"><i class="fas fa-check"></i></td>
-                                    <td class="col-blue"><i class="fas fa-check"></i></td>
-                                </tr>
-                                <tr>
-                                    <td> <i class="fas fa-times"></i> </td>
-                                    <td class="col-blue"><i class="fas fa-check"></i></td>
-                                    <td class="col-blue"><i class="fas fa-check"></i></td>
-                                </tr>
-                                <tr>
-                                    <td> <i class="fas fa-times"></i> </td>
-                                    <td> <i class="fas fa-times"></i> </td>
-                                    <td class="col-blue"><i class="fas fa-check"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="btn-cell">
-                                        <a href="#" class="btn btn-outline">GET IT NOW</a>
-                                    </td>
-                                    <td class="btn-cell">
-                                        <a href="#" class="btn btn-blue">GET IT NOW</a>
-                                    </td>
-                                    <td class="btn-cell">
-                                        <a href="#" class="btn btn-outline">GET IT NOW</a>
-                                    </td>
-                                </tr>
-                            </table>
-                            <div class="btn-shop">
-                                <a href="#" class="btn btn-square">
-                                    <img class="img-resp" src="./img/main/plans/svg-0.svg" alt="Lorem ipsum">
-                                </a>
-                                <a href="#" class="btn btn-square">
-                                    <img class="img-resp" src="./img/main/plans/svg-2.svg" alt="Lorem ipsum">
-                                </a>
+                                </span>
+                            </div>
+                            <div class="grid-options">
+                                <span class="option-title">
+                                    <img src="./img/main/plans/h5-custom-icon-7.png" alt="Standard plan">
+                                    <h5>Standard</h5>
+                                    <h5 class="price">
+                                        <small class="txt-sans">
+                                            $12
+                                        </small>    
+                                    </h5>
+                                </span>
+                                <span class="option-title active">
+                                    <img src="./img/main/plans/h5-custom-icon-8.png" alt="Standard plan">
+                                    <h5>Professional</h5>
+                                    <h5 class="price">
+                                        <small class="txt-sans">
+                                            $59
+                                        </small>    
+                                    </h5>
+                                </span>
+                                <span class="option-title">
+                                    <img src="./img/main/plans/h5-custom-icon-9.png" alt="Standard plan">
+                                    <h5>Advanced</h5>
+                                    <h5 class="price">
+                                        <small class="txt-sans">
+                                            $88
+                                        </small>    
+                                    </h5>
+                                </span>
+                                <span class="option-item">
+                                    2
+                                    <small class="mobile-only">Courses</small>
+                                </span>
+                                <span class="option-item">
+                                    4
+                                    <small class="mobile-only">Courses</small>
+                                </span>
+                                <span class="option-item">
+                                    6
+                                    <small class="mobile-only">Courses</small>
+                                </span>
+                                <span class="option-item">
+                                    15 Days
+                                </span>
+                                <span class="option-item">
+                                    30 Days
+                                </span>
+                                <span class="option-item">
+                                    30 Days
+                                </span>
+                                <span class="option-item">
+                                    <i class="desktop-only fas fa-check col-blue"></i>
+                                    <small class="mobile-only">Web Design</small>
+                                </span>
+                                <span class="option-item">
+                                    <i class="desktop-only fas fa-check col-blue"></i>
+                                    <small class="mobile-only">Web Design</small>
+                                </span>
+                                <span class="option-item">
+                                    <i class="desktop-only fas fa-check col-blue"></i>
+                                    <small class="mobile-only">Web Design</small>
+                                </span>
+                                <span class="option-item">
+                                    <i class="desktop-only fas fa-check col-blue"></i>
+                                    <small class="mobile-only">Human-Centered Design</small>
+                                </span>
+                                <span class="option-item">
+                                    <i class="desktop-only fas fa-check col-blue"></i>
+                                    <small class="mobile-only">Human-Centered Design</small>
+                                </span>
+                                <span class="option-item">
+                                    <i class="desktop-only fas fa-check col-blue"></i>
+                                    <small class="mobile-only">Human-Centered Design</small>
+                                </span>
+                                <span class="option-item">
+                                    <i class="desktop-only fas fa-times"></i>
+                                    <small class="mobile-only txt-del">Basic Marketing</small>
+                                </span>
+                                <span class="option-item">
+                                    <i class="desktop-only fas fa-check col-blue"></i>
+                                    <small class="mobile-only">Basic Marketing</small>
+                                </span>
+                                <span class="option-item">
+                                    <i class="desktop-only fas fa-check col-blue"></i>
+                                    <small class="mobile-only">Basic Marketing</small>
+                                </span>
+                                <span class="option-item">
+                                    <i class="desktop-only fas fa-times"></i>
+                                    <small class="mobile-only txt-del">Python for Everybody</small>
+                                </span>
+                                <span class="option-item">
+                                    <i class="desktop-only fas fa-check col-blue"></i>
+                                    <small class="mobile-only">Python for Everybody</small>
+                                </span>
+                                <span class="option-item">
+                                    <i class="desktop-only fas fa-check col-blue"></i>
+                                    <small class="mobile-only">Python for Everybody</small>
+                                </span>
+                                <span class="option-item">
+                                    <i class="desktop-only fas fa-times"></i>
+                                    <small class="mobile-only txt-del">Android Developer</small>
+                                </span>
+                                <span class="option-item">
+                                    <i class="desktop-only fas fa-times"></i>
+                                    <small class="mobile-only txt-del">Android Developer</small>
+                                </span>
+                                <span class="option-item">
+                                    <i class="desktop-only fas fa-check col-blue"></i>
+                                    <small class="mobile-only">Android Developer</small>
+                                </span>
+                                <span class="option-item">
+                                    <i class="desktop-only fas fa-times"></i>
+                                    <small class="mobile-only txt-del">Business English</small>
+                                </span>
+                                <span class="option-item">
+                                    <i class="desktop-only fas fa-times"></i>
+                                    <small class="mobile-only txt-del">Business English</small>
+                                </span>
+                                <span class="option-item">
+                                    <i class="desktop-only fas fa-check col-blue"></i>
+                                    <small class="mobile-only">Business English</small>
+                                </span>
+                                <span class="option-button">
+                                    <a href="#" @click.prevent class="btn btn-outline">GET IT NOW</a>
+                                </span>
+                                <span class="option-button">
+                                    <a href="#" @click.prevent class="btn btn-blue">GET IT NOW</a>
+                                </span>
+                                <span class="option-button">
+                                    <a href="#" @click.prevent class="btn btn-outline">GET IT NOW</a>
+                                </span>
+                                <div class="btn-shop">
+                                    <a href="#" class="btn btn-square">
+                                        <img class="img-resp" src="./img/main/plans/svg-0.svg" alt="Lorem ipsum">
+                                    </a>
+                                    <a href="#" class="btn btn-square">
+                                        <img class="img-resp" src="./img/main/plans/svg-2.svg" alt="Lorem ipsum">
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -372,7 +435,7 @@
                 <div class="container">
                     <ul class="">
                         <li v-for=" (img,i) in  advList">
-                            <a href="#"  @mouseover="changeH(i)" @mouseleave="changeH(i)">
+                            <a @click.prevent href="#"  @mouseover="changeH(i)" @mouseleave="changeH(i)">
                                 <img class="img-resp" v-if=" indexAdv === i " :src="`./img/main/adv/${img.imgH}.png`" alt="lorem">
                                 <img class="img-resp" v-else :src="`./img/main/adv/${img.img}.png`" alt="lorem">
                             </a>
@@ -391,7 +454,7 @@
                         <p class="mt-25">Providing Life Changing Experiences Throught Education. Class That Fit Your Busy Life. Closer to Home</p>
                         <ul class="v-list mt-25">
                             <li>
-                                <a href="#">
+                                <a @click.prevent href="#">
                                     <i class="fas fa-phone"></i>
                                     <span>
                                         1-677-124-44227    
@@ -399,7 +462,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a @click.prevent href="#">
                                     <i class="fas fa-clock"></i>
                                     <span>
                                         Mon - Sat 8.00 - 18.00    
@@ -412,7 +475,7 @@
                         <h5>Popular Courses</h5>
                         <ul class="courses-list v-list mt-25" >
                             <li v-for=" item in footerCourses " class="course-item">
-                                <a class="col-dark-g" href="#">
+                                <a @click.prevent class="col-dark-g" href="#">
                                     <h6 class="txt-serif"> {{ item.title }} </h6>
                                     <small> {{ item.sub }} </small>
                                 </a>
@@ -423,7 +486,7 @@
                         <h5>Support</h5>
                         <ul class="support-list v-list mt-25">
                             <li v-for=" item in footerSupport " class="support-item">
-                                <a class="col-dark-g" href="#">
+                                <a @click.prevent class="col-dark-g" href="#">
                                     {{ item }}
                                 </a>
                             </li>
@@ -441,25 +504,25 @@
                     <div class="copy-right">
                         <ul class="h-list">
                             <li>
-                                <a href="#">
+                                <a @click.prevent href="#">
                                     CALL +44 300 303 0266
                                 </a>
                             </li>
                             <li>
-                                <a href="#">FOLLOW US</a>
+                                <a @click.prevent href="#">FOLLOW US</a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a @click.prevent href="#">
                                     <i class="fab fa-twitter"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a @click.prevent href="#">
                                     <i class="fab fa-instagram"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a @click.prevent href="#">
                                     <i class="fab fa-facebook-f"></i>
                                 </a>
                             </li>

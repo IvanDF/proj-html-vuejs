@@ -8,6 +8,12 @@
 
 /* GENERAL SETTINGS */
 
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    /* PER FUNZIONARE SU SAFARI BISOGNA ATTIVARE DAL BROWSER NELLE FUNZIONI SPERIMENTALI "View smooth scrolling" */
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -148,6 +154,11 @@ h6 {
 
 .txt-capitalize {
     text-transform: capitalize;
+}
+
+.txt-del {
+    text-decoration: line-through;
+    opacity: .6;
 }
 
 .bold {
