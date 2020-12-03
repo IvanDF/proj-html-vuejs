@@ -129,7 +129,7 @@
                 name: 'What We Do',
                 title: 'Learn Possibilities',
                 text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta!',
-                list: [ 
+                list: [
                     'We enrich throught learning.',
                     'Maximizing potential through individual attention.',
                     'The trusted name for specialized training.',
@@ -141,7 +141,7 @@
                 name: 'Degree Programme',
                 title: 'Degree',
                 text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta!',
-                list: [ 
+                list: [
                     'We enrich throught learning.',
                     'Maximizing potential through individual attention.',
                     'The trusted name for specialized training.',
@@ -153,7 +153,7 @@
                 name: 'Career Achievements',
                 title: 'Achievements',
                 text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta!',
-                list: [ 
+                list: [
                     'We enrich throught learning.',
                     'Oke potential through individual attention.',
                     'The trusted name for specialized training.',
@@ -165,7 +165,7 @@
                 name: 'Personal Managment',
                 title: 'Managment',
                 text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta!',
-                list: [ 
+                list: [
                     'We enrich throught learning.',
                     'Maximizing potential through individual attention.',
                     'The trusted name for specialized training.',
@@ -177,7 +177,7 @@
                 name: 'Steps To Success',
                 title: 'Steps To Success',
                 text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta!',
-                list: [ 
+                list: [
                     'We enrich throught learning.',
                     'People teach. People learn. This in whewe they connect.'
                 ],
@@ -187,7 +187,7 @@
                 name: 'Knowledge Transfer',
                 title: 'Knowledge',
                 text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, iusto? Nostrum, ducimus similique amet hic sunt at velit totam deserunt perspiciatis, repellendus minus suscipit tempore ullam numquam blanditiis cum dicta!',
-                list: [ 
+                list: [
                     'We enrich throught learning.',
                     'Maximizing potential through individual attention.',
                     'The trusted name for specialized training.',
